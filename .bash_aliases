@@ -1,0 +1,15 @@
+alias r='ranger'
+alias py='python3'
+alias gs='git status '
+alias ga='git add '
+alias gcm='git commit -m'
+alias gb='git branch'
+alias tch='touch'
+alias code='codium'
+#Make directory & enter it
+mkcd() {
+   mkdir -p $1
+   cd $1
+}
+alias wttr='curl https://www.wttr.in/Москва?lang=ru'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
