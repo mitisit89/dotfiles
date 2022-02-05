@@ -38,4 +38,4 @@ bspc rule -a Spotify  desktop=VI
 bspc rule -a Steam desktop=VII
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating
-
+bspc rule -a Zathura state=tiled
