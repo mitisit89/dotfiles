@@ -13,3 +13,4 @@ vim.cmd"map <space>r :NvimTreeRefresh<CR>"
 --<A>-alt
 nvim_set_keymap('n', '<A-,>', ':BufferPrevious<CR>', default_opt)
 nvim_set_keymap('n', '<A-.>', ':BufferNext<CR>', default_opt) 
+nvim_set_keymap('n', '<C-c>', ':BufferClose<CR>',default_opt)
