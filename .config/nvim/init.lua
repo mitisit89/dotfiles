@@ -7,6 +7,7 @@ vim.g.bufferline = {
    }
  vim.g.dashboard_default_executive ='telescope'
  require'lspconfig'.vuels.setup{}
+ require'lspconfig'.yamlls.setup{}
  require'lspconfig'.cssls.setup{}
  require'lspconfig'.html.setup{}
  require'lspconfig'.emmet_ls.setup{}
@@ -17,6 +18,7 @@ require'lspconfig'.gopls.setup{}
 require'lualine'.setup {
     options = {  
       theme = 'ayu_dark',  
+	   icons = true,
     },
     extensions = {'toggleterm','nvim-tree'}
   }

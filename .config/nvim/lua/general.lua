@@ -22,3 +22,10 @@ o.filetype="plugin"
 vim.cmd 'let g:python3_host_prog = expand("/usr/bin/python")'
 vim.cmd 'let ayucolor="dark"'
 vim.cmd 'colorscheme ayu'
+vim.opt.showtabline = 2
+o.smartcase = true
+o.smartindent = true
+o.title = true 
+o.expandtab = true 
+o.copyindent = true 
+o.wrap=false
