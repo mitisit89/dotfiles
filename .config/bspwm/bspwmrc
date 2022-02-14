@@ -17,7 +17,7 @@ bspc config normal_border_color         "#073642"
 bspc config active_border_color         "#073642"
 
 # Autostart
-
+setxkbmap -model pc105 -layout us,ru -option grp:alt_space_toggle
 # Polybar
 ~/.config/polybar/launch.sh &
 # Polkit
