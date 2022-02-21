@@ -3,7 +3,7 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:                           "Ubuntu Regular 10";
+    font:                           "UbuntuMono Nerd Font 10";
     show-icons:                     true;
     icon-theme: 		    "Papirus-dark";
     scroll-method:                  0;
