@@ -15,3 +15,5 @@ bind('n', '<space>r', ':NvimTreeRefresh<CR>', opts)
 bind('n', '<A-,>', ':BufferPrevious<CR>', opts)
 bind('n', '<A-.>', ':BufferNext<CR>', opts) 
 bind('n', '<C-c>', ':BufferClose<CR>',opts)
+
+bind('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)

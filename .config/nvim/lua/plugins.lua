@@ -32,5 +32,6 @@ use {
   requires = {'kyazdani42/nvim-web-devicons'}
 }
 use 'lewis6991/gitsigns.nvim'
+use 'jose-elias-alvarez/null-ls.nvim'
 end)
 

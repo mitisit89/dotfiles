@@ -23,6 +23,22 @@ require'lualine'.setup {
     },
     extensions = {'toggleterm','nvim-tree'}
   }
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.formatting.black 
+    },
+    on_attach = function(client)
+        if client.resolved_capabilities.document_formatting then
+            vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
+        end
+    end,
+})
 require('telescope').setup{}
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
