@@ -33,5 +33,6 @@ use {
 }
 use 'lewis6991/gitsigns.nvim'
 use 'jose-elias-alvarez/null-ls.nvim'
+use  'numToStr/Comment.nvim'
 end)
 
