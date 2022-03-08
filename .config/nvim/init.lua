@@ -26,18 +26,10 @@ require'lualine'.setup {
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.formatting.black 
+        require("null-ls").builtins.formatting.black,
+        require("null-ls").builtins.formatting.gofmt
     },
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd([[
-            augroup LspFormatting
-                autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            augroup END
-            ]])
-        end
-    end,
+
 })
 require('telescope').setup{}
 -- following options are the default
@@ -74,17 +66,8 @@ require'nvim-tree'.setup {
   }
   
   require'nvim-treesitter.configs'.setup {
-    -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-    ensure_installed = {'python','yaml','toml','bash','vim','go','gomod','html','vue','tsx','rust','dockerfile'},
-  
-    -- Install languages synchronously (only applied to `ensure_installed`)
-    sync_install = true,
-  
-  
     highlight = {
-      -- `false` will disable the whole extension
       enable = true,
-  
       additional_vim_regex_highlighting = false,
     },
   }
