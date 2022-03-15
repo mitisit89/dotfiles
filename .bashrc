@@ -138,4 +138,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+export PROMPT_COMMAND="history -a; history -n"
+
 eval "$(starship init bash)"
