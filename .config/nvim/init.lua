@@ -6,16 +6,21 @@ vim.g.bufferline = {
     closable = false,
    }
  vim.g.dashboard_default_executive ='telescope'
- require'lspconfig'.dockerls.setup{}
- require'lspconfig'.vuels.setup{}
- require'lspconfig'.yamlls.setup{}
- require'lspconfig'.cssls.setup{}
- require'lspconfig'.html.setup{}
- require'lspconfig'.emmet_ls.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.pyright.setup{}
 require('nvim-autopairs').setup{}
 require'lspconfig'.gopls.setup{}
+
+lsp_servers={'dockerls','vuels','yamlls','cssls','html','emmet_ls','tsserver','pyright'}
+for _, lsp in pairs(lsp_servers) do
+  require('lspconfig')[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+
 require'lualine'.setup {
     options = {  
       theme = 'ayu_mirage',  
