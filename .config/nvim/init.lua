@@ -150,3 +150,5 @@ require("toggleterm").setup{
 	},
   }
  require('gitsigns').setup() 
+
+

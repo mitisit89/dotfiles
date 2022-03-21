@@ -16,5 +16,5 @@ bind('n', '<A-,>', ':BufferPrevious<CR>', opts)
 bind('n', '<A-.>', ':BufferNext<CR>', opts) 
 bind('n', '<C-c>', ':BufferClose<CR>',opts)
 
-bind('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+bind('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 bind('n', 'F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
