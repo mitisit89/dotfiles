@@ -26,7 +26,7 @@ return require('packer').startup(function()
   use {"akinsho/toggleterm.nvim"}
 
   use 'windwp/nvim-autopairs'
-  use 'glepnir/dashboard-nvim'
+  use 'goolord/alpha-nvim'
 use {
   'romgrk/barbar.nvim',
   requires = {'kyazdani42/nvim-web-devicons'}
@@ -34,5 +34,6 @@ use {
 use 'lewis6991/gitsigns.nvim'
 use 'jose-elias-alvarez/null-ls.nvim'
 use  'numToStr/Comment.nvim'
+use 'Shatur/neovim-session-manager'
 end)
 

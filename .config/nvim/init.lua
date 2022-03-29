@@ -5,7 +5,6 @@ require'lspconfig'.eslint.setup{}
 vim.g.bufferline = {
     closable = false,
    }
- vim.g.dashboard_default_executive ='telescope'
 require('nvim-autopairs').setup{}
 require'lspconfig'.gopls.setup{}
 
@@ -44,7 +43,7 @@ require'nvim-tree'.setup {
     hijack_netrw        = false,
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
-    auto_close          = true,
+    --auto_close          = true,
     open_on_tab         = true,
     hijack_cursor       = true,
     update_cwd          = false,
@@ -128,6 +127,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    {name='path'},
+    {name='buffer'}
   },
 }
 require("toggleterm").setup{
@@ -148,5 +149,7 @@ require("toggleterm").setup{
 	},
   }
  require('gitsigns').setup() 
-
-
+require'alpha'.setup(require'alpha.themes.startify'.config)
+require('session_manager').setup {
+  autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+}
