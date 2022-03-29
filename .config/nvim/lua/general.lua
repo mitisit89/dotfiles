@@ -29,3 +29,5 @@ o.title = true
 o.expandtab = true 
 o.copyindent = true 
 o.wrap=false
+o.completeopt = 'menuone,noselect'
+
