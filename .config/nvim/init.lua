@@ -1,6 +1,14 @@
 require("plugins")
 require("general")
 require("keybindings")
+
+-- require('github-theme').setup({
+-- theme_style = "dimmed",
+-- dark_sidebar=true,
+-- colors = {bg = "#0d1117"},
+-- }
+
+--)
 require'lspconfig'.eslint.setup{}
 vim.g.bufferline = {
     closable = false,
@@ -20,13 +28,6 @@ for _, lsp in pairs(lsp_servers) do
 end
 
 
-require'lualine'.setup {
-    options = {  
-      theme = 'ayu_mirage',  
-	   icons = true,
-    },
-    extensions = {'toggleterm','nvim-tree'}
-  }
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint,
@@ -153,3 +154,9 @@ require'alpha'.setup(require'alpha.themes.startify'.config)
 require('session_manager').setup {
   autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
 }
+
+
+
+require'lualine'.setup { }
+
+

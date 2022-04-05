@@ -30,4 +30,8 @@ o.expandtab = true
 o.copyindent = true 
 o.wrap=false
 o.completeopt = 'menuone,noselect'
+o.updatetime = 250
+
+vim.diagnostic.config({virtual_text = false})
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 
