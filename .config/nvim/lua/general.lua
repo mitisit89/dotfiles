@@ -20,8 +20,9 @@ o.signcolumn='yes'
 o.filetype="plugin"
 --o.guicursor=' '
 vim.cmd 'let g:python3_host_prog = expand("/usr/bin/python")'
-vim.cmd 'let ayucolor="dark"'
-vim.cmd 'colorscheme ayu'
+--vim.cmd 'let ayucolor="dark"'
+--vim.cmd 'colorscheme ayu'
+vim.cmd [[colorscheme moonfly]]
 vim.opt.showtabline = 2
 o.smartcase = true
 o.smartindent = true

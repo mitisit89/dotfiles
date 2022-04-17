@@ -157,6 +157,6 @@ require('session_manager').setup {
 
 
 
-require'lualine'.setup { }
+require'lualine'.setup({options = {theme = 'moonfly'}})
 
 

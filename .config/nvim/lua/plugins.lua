@@ -37,5 +37,6 @@ use 'lewis6991/gitsigns.nvim'
 use 'jose-elias-alvarez/null-ls.nvim'
 use  'numToStr/Comment.nvim'
 use 'Shatur/neovim-session-manager'
+use 'bluz71/vim-moonfly-colors'
 end)
 
