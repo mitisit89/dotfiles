@@ -22,7 +22,7 @@ bspc config active_border_color         "#073642"
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Notifications
-/usr/bin/dunst &
+#/usr/bin/dunst &
 # Redshift
 redshift-gtk &
 # Wallpaper
@@ -36,7 +36,6 @@ bspc rule -a discord   desktop=III
 bspc rule -a TelegramDesktop  desktop=III 
 bspc rule -a Thunderbird  desktop=IV
 bspc rule -a Pcmanfm  desktop=V
-bspc rule -a Spotify  desktop=VI
 bspc rule -a Steam desktop=VII
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating

@@ -13,4 +13,4 @@ mkcd() {
 }
 alias wttr='curl https://www.wttr.in/Москва?lang=ru'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias gt="git log --oneline --graph --color --all --decorate"
+alias gtree="git log --oneline --graph --color --all --decorate"
