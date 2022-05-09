@@ -14,9 +14,8 @@ vim.g.bufferline = {
     closable = false,
    }
 require('nvim-autopairs').setup{}
-require'lspconfig'.gopls.setup{}
 
-lsp_servers={'dockerls','vuels','yamlls','cssls','html','emmet_ls','tsserver','pyright'}
+lsp_servers={'dockerls','vuels','yamlls','cssls','html','emmet_ls','tsserver','pyright','gopls'}
 for _, lsp in pairs(lsp_servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -48,10 +47,10 @@ require'nvim-tree'.setup {
     open_on_tab         = true,
     hijack_cursor       = true,
     update_cwd          = false,
-    update_to_buf_dir   = {
-      enable = true,
-      auto_open = true,
-    },
+    -- update_to_buf_dir   = {
+    --   enable = true,
+    --   auto_open = true,
+    -- },
     update_focused_file = {
       enable      = false,
       update_cwd  = false,
@@ -66,7 +65,7 @@ require'nvim-tree'.setup {
       height = 20,
       hide_root_folder = false,
       side = 'left',
-      auto_resize = false,
+      -- auto_resize = false,
     }
   }
   
@@ -158,5 +157,4 @@ require('session_manager').setup {
 
 
 require'lualine'.setup({options = {theme = 'moonfly'}})
-
 
