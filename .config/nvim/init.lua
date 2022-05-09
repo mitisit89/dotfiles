@@ -2,20 +2,14 @@ require("plugins")
 require("general")
 require("keybindings")
 
--- require('github-theme').setup({
--- theme_style = "dimmed",
--- dark_sidebar=true,
--- colors = {bg = "#0d1117"},
--- }
 
---)
-require'lspconfig'.eslint.setup{}
+
 vim.g.bufferline = {
     closable = false,
    }
 require('nvim-autopairs').setup{}
 
-lsp_servers={'dockerls','vuels','yamlls','cssls','html','emmet_ls','tsserver','pyright','gopls'}
+lsp_servers={'dockerls','vuels','yamlls','emmet_ls','tsserver','pyright','gopls','eslint'}
 for _, lsp in pairs(lsp_servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
