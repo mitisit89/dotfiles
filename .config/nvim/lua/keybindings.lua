@@ -15,6 +15,6 @@ bind('n', '<space>r', ':NvimTreeRefresh<CR>', opts)
 bind('n', '<A-,>', ':BufferPrevious<CR>', opts)
 bind('n', '<A-.>', ':BufferNext<CR>', opts) 
 bind('n', '<C-c>', ':BufferClose<CR>',opts)
-
+bind('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 bind('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 bind('n', 'F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
