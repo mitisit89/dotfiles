@@ -1,4 +1,5 @@
-
+env:
+  TERM: xterm-256color
 
 window:
   # Allow terminal applications to change Alacritty's window title.
@@ -53,38 +54,46 @@ font:
 
   # Point size
   size: 13.0
-
-# Colors (Ayu Dark)
+# Colors
 colors:
   # Default colors
   primary:
-    background: '#0A0E14'
-    foreground: '#B3B1AD'
+    background:        '#080808'
+    foreground:        '#b2b2b2'
+    bright_foreground: '#eeeeee'
+
+  # Cursor colors
+  cursor:
+    text:   '#080808'
+    cursor: '#9e9e9e'
+
+  # Selection colors
+  selection:
+    text:       '#080808'
+    background: '#b2ceee'
 
   # Normal colors
   normal:
-    black: '#01060E'
-    red: '#EA6C73'
-    green: '#91B362'
-    yellow: '#F9AF4F'
-    blue: '#53BDFA'
-    magenta: '#FAE994'
-    cyan: '#90E1C6'
-    white: '#C7C7C7'
+    black:   '#323437'
+    red:     '#ff5454'
+    green:   '#8cc85f'
+    yellow:  '#e3c78a'
+    blue:    '#80a0ff'
+    magenta: '#d183e8'
+    cyan:    '#79dac8'
+    white:   '#c6c6c6'
 
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#F07178'
-    green: '#C2D94C'
-    yellow: '#FFB454'
-    blue: '#59C2FF'
-    magenta: '#FFEE99'
-    cyan: '#95E6CB'
-    white: '#FFFFFF'  # Cursor colors
-  # Colors which should be used to draw the terminal cursor.
-  #
-  
+    black:   '#949494'
+    red:     '#ff5189'
+    green:   '#36c692'
+    yellow:  '#c2c292'
+    blue:    '#74b2ff'
+    magenta: '#ae81ff'
+    cyan:    '#85dc85'
+    white:   '#e4e4e4'
+ 
 cursor:
   # Cursor style
   style:
