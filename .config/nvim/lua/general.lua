@@ -26,8 +26,8 @@ vim.cmd [[colorscheme moonfly]]
 vim.opt.showtabline = 2
 o.smartcase = true
 o.smartindent = true
-o.title = true 
-o.expandtab = true 
+o.title = true
+o.expandtab = true
 o.copyindent = true 
 o.wrap=false
 o.completeopt = 'menuone,noselect'

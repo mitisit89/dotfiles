@@ -9,14 +9,10 @@ vim.g.bufferline = {
    }
 require('nvim-autopairs').setup{}
 
-lsp_servers={'dockerls','vuels','yamlls','emmet_ls','tsserver','pyright','gopls','eslint'}
+local lsp_servers={'dockerls','vuels','yamlls','emmet_ls','tsserver','pyright','gopls','eslint'}
 for _, lsp in pairs(lsp_servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
   }
 end
 
@@ -62,14 +58,12 @@ require'nvim-tree'.setup {
       -- auto_resize = false,
     }
   }
-  
-  require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
     },
   }
- 
 require('Comment').setup()
   -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -85,7 +79,7 @@ local cmp = require 'cmp'
 cmp.setup {
   snippet = {
     expand = function(args)
-  luasnip.lsp_expand(args.body)  
+  luasnip.lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -142,7 +136,7 @@ require("toggleterm").setup{
 		},
 	},
   }
- require('gitsigns').setup() 
+ require('gitsigns').setup()
 require'alpha'.setup(require'alpha.themes.startify'.config)
 require('session_manager').setup {
   autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
