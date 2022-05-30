@@ -33,6 +33,20 @@ o.wrap=false
 o.completeopt = 'menuone,noselect'
 o.updatetime = 250
 o.clipboard='unnamedplus'
-vim.diagnostic.config({virtual_text = false})
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 
+
+
+vim.diagnostic.config({virtual_text = false})
+vim.api.nvim_create_autocmd("CursorHold", {
+  buffer = bufnr,
+  callback = function()
+    local opts = {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end
+})
