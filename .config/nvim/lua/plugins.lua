@@ -38,5 +38,6 @@ use 'jose-elias-alvarez/null-ls.nvim'
 use  'numToStr/Comment.nvim'
 use 'Shatur/neovim-session-manager'
 use 'bluz71/vim-moonfly-colors'
+ use  "williamboman/nvim-lsp-installer"
 end)
 

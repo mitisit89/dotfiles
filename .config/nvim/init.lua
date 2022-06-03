@@ -2,7 +2,7 @@ require("plugins")
 require("general")
 require("keybindings")
 
-
+require("nvim-lsp-installer").setup {}
 
 vim.g.bufferline = {
     closable = false,
