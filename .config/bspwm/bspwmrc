@@ -28,7 +28,7 @@ redshift-gtk &
 nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
-
+xsetroot -cursor_name left_ptr 
 #Rules
 bspc rule -a firefox  desktop=II 
 bspc rule -a discord   desktop=III 

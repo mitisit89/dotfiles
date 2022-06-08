@@ -1,23 +1,23 @@
-local o=vim.o
+local o = vim.o
 
-o.number=true
-o.backup=false
-o.encoding='utf-8'
-o.writebackup=false
-o.smarttab=true
+o.number = true
+o.backup = false
+o.encoding = 'utf-8'
+o.writebackup = false
+o.smarttab = true
 o.termguicolors = true
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
-o.swapfile=false
-o.autoindent=true
-o.showmode=false
-o.smartindent=true
-o.splitright=true
-o.splitbelow=true
-o.signcolumn='yes'
+o.swapfile = false
+o.autoindent = true
+o.showmode = false
+o.smartindent = true
+o.splitright = true
+o.splitbelow = true
+o.signcolumn = 'yes'
 --o.syntax='on'
-o.filetype="plugin"
+o.filetype = "plugin"
 --o.guicursor=' '
 vim.cmd 'let g:python3_host_prog = expand("/usr/bin/python")'
 --vim.cmd 'let ayucolor="dark"'
@@ -28,25 +28,25 @@ o.smartcase = true
 o.smartindent = true
 o.title = true
 o.expandtab = true
-o.copyindent = true 
-o.wrap=false
+o.copyindent = true
+o.wrap = false
 o.completeopt = 'menuone,noselect'
 o.updatetime = 250
-o.clipboard='unnamedplus'
+o.clipboard = 'unnamedplus'
 
 
 
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({ virtual_text = false })
 vim.api.nvim_create_autocmd("CursorHold", {
-  buffer = bufnr,
-  callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    vim.diagnostic.open_float(nil, opts)
-  end
+    buffer = bufnr,
+    callback = function()
+        local opts = {
+            focusable = false,
+            close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+            source = 'always',
+            prefix = ' ',
+            scope = 'cursor',
+        }
+        vim.diagnostic.open_float(nil, opts)
+    end
 })
