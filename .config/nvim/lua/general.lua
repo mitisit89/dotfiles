@@ -33,7 +33,7 @@ o.wrap = false
 o.completeopt = 'menuone,noselect'
 o.updatetime = 250
 o.clipboard = 'unnamedplus'
-
+o.pumheight=7
 
 
 vim.diagnostic.config({ virtual_text = false })
