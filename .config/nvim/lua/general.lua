@@ -19,7 +19,7 @@ o.signcolumn = 'yes'
 --o.syntax='on'
 o.filetype = "plugin"
 --o.guicursor=' '
-vim.cmd 'let g:python3_host_prog = expand("/usr/bin/python")'
+--vim.cmd 'let g:python3_host_prog = expand("/usr/bin/python")'
 --vim.cmd 'let ayucolor="dark"'
 --vim.cmd 'colorscheme ayu'
 vim.cmd [[colorscheme moonfly]]

@@ -1,15 +1,15 @@
 require("plugins")
 require("general")
 require("keybindings")
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup {
+}
 
 vim.g.bufferline = {
     closable = false,
 }
 require('nvim-autopairs').setup {}
-
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
-    'emmet_ls', 'tsserver', 'pyright',
+    'emmet_ls', 'tsserver', 'pylsp',
     'gopls', 'eslint', 'jsonls',
     'sumneko_lua' }
 for _, lsp in pairs(lsp_servers) do
@@ -22,7 +22,7 @@ end
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.formatting.black,
+        --require("null-ls").builtins.formatting.black,
         require("null-ls").builtins.formatting.gofmt
     },
 
@@ -71,7 +71,7 @@ require('Comment').setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-
+local lspkind = require('lspkind')
 -- luasnip setup
 require("luasnip/loaders/from_vscode").lazy_load()
 local luasnip = require("luasnip")
@@ -79,6 +79,17 @@ local luasnip = require("luasnip")
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'text',
+            menu = ({
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+            }),
+            maxwidth = 40
+        })
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)

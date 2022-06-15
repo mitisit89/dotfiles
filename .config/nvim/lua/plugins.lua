@@ -37,4 +37,5 @@ return require('packer').startup(function(use)
     use 'Shatur/neovim-session-manager'
     use 'bluz71/vim-moonfly-colors'
     use "williamboman/nvim-lsp-installer"
+    use "onsails/lspkind.nvim"
 end)
