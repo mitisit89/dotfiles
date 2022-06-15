@@ -9,7 +9,7 @@ vim.g.bufferline = {
 }
 require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
-    'emmet_ls', 'tsserver', 'pylsp',
+    'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
     'sumneko_lua' }
 for _, lsp in pairs(lsp_servers) do
@@ -87,7 +87,6 @@ cmp.setup {
                 nvim_lsp = "[LSP]",
                 luasnip = "[LuaSnip]",
             }),
-            maxwidth = 40
         })
     },
     snippet = {
@@ -156,5 +155,6 @@ require('session_manager').setup {
 }
 
 
-
+require'lspconfig'.pyright.setup{
+}
 require 'lualine'.setup({ options = { theme = 'moonfly' } })
