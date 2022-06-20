@@ -11,7 +11,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua' }
+    'sumneko_lua', "taplo" }
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -22,7 +22,7 @@ end
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint,
-        --require("null-ls").builtins.formatting.black,
+        require("null-ls").builtins.formatting.black,
         require("null-ls").builtins.formatting.gofmt
     },
 
@@ -31,33 +31,32 @@ require('telescope').setup {}
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require 'nvim-tree'.setup {
-    disable_netrw       = false,
-    hijack_netrw        = false,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
-    --auto_close          = true,
-    open_on_tab         = true,
-    hijack_cursor       = true,
-    update_cwd          = false,
-    -- update_to_buf_dir   = {
-    --   enable = true,
-    --   auto_open = true,
-    -- },
+    disable_netrw = false,
+    hijack_netrw = true,
+    open_on_setup = false,
+    ignore_ft_on_setup = {},
+    open_on_tab = true,
+    hijack_cursor = true,
+    update_cwd = true,
     update_focused_file = {
-        enable      = false,
-        update_cwd  = false,
+        enable      = true,
+        update_cwd  = true,
         ignore_list = {}
     },
-    filters             = {
-        dotfiles = true,
+    filters = {
+        dotfiles = false,
         custom = {}
     },
-    view                = {
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
+    view = {
         width = 20,
         height = 20,
         hide_root_folder = false,
         side = 'left',
-        -- auto_resize = false,
     }
 }
 require 'nvim-treesitter.configs'.setup {
@@ -155,6 +154,6 @@ require('session_manager').setup {
 }
 
 
-require'lspconfig'.pyright.setup{
+require 'lspconfig'.pyright.setup {
 }
 require 'lualine'.setup({ options = { theme = 'moonfly' } })
