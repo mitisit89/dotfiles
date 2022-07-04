@@ -1,6 +1,5 @@
   local opts = {noremap = true, silent = true}
   local bind = vim.api.nvim_set_keymap
---vim.g.bindleader='<space>'
 
 --Telescope
 bind("n", "<leader>gt", ':Telescope lsp_definitions<CR>',opts )

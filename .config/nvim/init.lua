@@ -4,9 +4,7 @@ require("keybindings")
 require("nvim-lsp-installer").setup {
 }
 
-vim.g.bufferline = {
-    closable = false,
-}
+
 require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
@@ -74,7 +72,6 @@ local lspkind = require('lspkind')
 -- luasnip setup
 require("luasnip/loaders/from_vscode").lazy_load()
 local luasnip = require("luasnip")
--- nvim-cmp setup
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
