@@ -11,7 +11,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua', "taplo" }
+    'sumneko_lua', "taplo", "pyright" }
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -149,11 +149,5 @@ require("toggleterm").setup {
 }
 require('gitsigns').setup()
 require 'alpha'.setup(require 'alpha.themes.startify'.config)
-require('session_manager').setup {
-    autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-}
-
-
-require 'lspconfig'.pyright.setup {
-}
+require('session_manager').setup { autoload_mode = require('session_manager.config').AutoloadMode.Disabled }
 require 'lualine'.setup({ options = { theme = 'moonfly' } })

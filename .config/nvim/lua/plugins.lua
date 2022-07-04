@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use { 'L3MON4D3/LuaSnip',
         requires = { "rafamadriz/friendly-snippets" } } -- Snippets plugin
-    use 'ayu-theme/ayu-vim'
+    --use 'ayu-theme/ayu-vim'
     use { 'nvim-treesitter/nvim-treesitter' }
     use {
         'kyazdani42/nvim-tree.lua',
@@ -45,4 +45,6 @@ return require('packer').startup(function(use)
     use 'bluz71/vim-moonfly-colors'
     use "williamboman/nvim-lsp-installer"
     use "onsails/lspkind.nvim"
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use { "ellisonleao/glow.nvim", branch = 'main' }
 end)
