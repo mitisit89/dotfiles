@@ -9,7 +9,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua', "taplo", "pyright" }
+    'sumneko_lua', "taplo", "pyright",'pasls' }
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,

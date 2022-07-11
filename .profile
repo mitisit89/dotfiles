@@ -15,6 +15,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export GOPATH="$XDG_DATA_HOME"/go 
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup 
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc  
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv

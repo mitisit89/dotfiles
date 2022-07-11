@@ -17,10 +17,7 @@ return require('packer').startup(function(use)
     use { 'L3MON4D3/LuaSnip',
         requires = { "rafamadriz/friendly-snippets" } } -- Snippets plugin
     use { 'nvim-treesitter/nvim-treesitter' }
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-    }
+    use 'kyazdani42/nvim-tree.lua'
     use {
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
@@ -30,13 +27,9 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use { "akinsho/toggleterm.nvim" }
-
     use 'windwp/nvim-autopairs'
     use 'goolord/alpha-nvim'
-    use {
-        'romgrk/barbar.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' }
-    }
+    use 'romgrk/barbar.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'numToStr/Comment.nvim'
