@@ -1,0 +1,59 @@
+set ignorecase true
+set icons true
+set drawbox true
+set preview true
+set ifs "\n"
+set  shell bash
+set previewer '~/.config/lf/scope'
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx ;;
+		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx ;;
+		application/zip) unzip $f ;;
+		image/*) setsid -f sxiv -a $fx 2>/dev/null ;;
+		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2>&1 & done;;
+    esac
+}}
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map mf mkfile
+map md mkdir
+map S shell
+map gc cd ~/.config
+map gm cd /mnt/
