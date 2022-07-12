@@ -9,7 +9,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua', "taplo", "pyright",'pasls' }
+    'sumneko_lua', "taplo", "pyright", 'pasls' }
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -25,7 +25,28 @@ require("null-ls").setup({
     },
 
 })
-require('telescope').setup {}
+require('telescope').setup {
+    vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--trim" -- add this value
+    },
+    pickers = {
+        find_files = {
+            find_command = { 'rg', '--ignore', '--hidden', '--files' },
+            prompt_prefix = " 🔍"
+        },
+        current_buffer_fuzzy_find = {
+            preview = false,
+            sorting_strategy = "ascending"
+        }
+    }
+}
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require 'nvim-tree'.setup {
@@ -55,6 +76,11 @@ require 'nvim-tree'.setup {
         height = 20,
         hide_root_folder = false,
         side = 'left',
+    },
+    renderer = {
+        indent_markers = {
+            enable = true
+        }
     }
 }
 require 'nvim-treesitter.configs'.setup {
