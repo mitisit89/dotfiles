@@ -4,7 +4,6 @@ set drawbox true
 set preview true
 set ifs "\n"
 set  shell bash
-set previewer '~/.config/lf/scope'
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -39,6 +38,18 @@ cmd trash ${{
     fi
   done
 }}
+cmd fzf_jump ${{
+    res="$(fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+map f :fzf_jump
 map m
 map o
 map n
@@ -52,8 +63,8 @@ map x cut
 map y copy
 map <enter> open
 map R reload
-map mf mkfile
-map md mkdir
-map S shell
+map af mkfile
+map ad mkdir
 map gc cd ~/.config
 map gm cd /mnt/
+map s shell

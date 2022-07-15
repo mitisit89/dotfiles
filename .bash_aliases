@@ -14,3 +14,6 @@ mkcd() {
 alias wttr='curl https://www.wttr.in/Москва?lang=ru'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias gtree="git log --oneline --graph --color --all --decorate"
+alias reset-vpn="nmcli connection down wg3  && nmcli connection up wg3"
+alias lg='lazygit'
+alias uptime="uptime -p"

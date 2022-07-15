@@ -9,7 +9,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua', "taplo", "pyright", 'pasls' }
+    'sumneko_lua', "taplo", "pyright","marksman"}
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -26,6 +26,10 @@ require("null-ls").setup({
 
 })
 require('telescope').setup {
+    defaults = {
+        prompt_prefix = "🔍 "
+
+    },
     vimgrep_arguments = {
         "rg",
         "--color=never",
@@ -39,14 +43,24 @@ require('telescope').setup {
     pickers = {
         find_files = {
             find_command = { 'rg', '--ignore', '--hidden', '--files' },
-            prompt_prefix = " 🔍"
         },
+
         current_buffer_fuzzy_find = {
             preview = false,
             sorting_strategy = "ascending"
         }
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true, -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
+        }
     }
 }
+require('telescope').load_extension('fzf')
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require 'nvim-tree'.setup {
