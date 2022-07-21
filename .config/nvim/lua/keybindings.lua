@@ -18,3 +18,6 @@ bind('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 bind('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 bind('n', 'F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 bind('t', '<esc>', '<C-\\><C-n>', opts)
+-- Nvim Dap 
+bind('n', '<leader>dp',':DapToggleBreakpoint<CR>',opts)
+bind('n', '<leader>dc',':DapContinue<CR>',opts)

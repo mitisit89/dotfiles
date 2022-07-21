@@ -9,7 +9,7 @@ require('nvim-autopairs').setup {}
 local lsp_servers = { 'dockerls', 'vuels', 'yamlls',
     'emmet_ls', 'tsserver',
     'gopls', 'eslint', 'jsonls',
-    'sumneko_lua', "taplo", "pyright","marksman"}
+    'sumneko_lua', "taplo", "pyright", "marksman" }
 for _, lsp in pairs(lsp_servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -184,7 +184,20 @@ require("toggleterm").setup {
         },
     },
 }
+local venv = os.getenv("VIRTUAL_ENV")
 require('gitsigns').setup()
 require 'alpha'.setup(require 'alpha.themes.startify'.config)
 require('session_manager').setup { autoload_mode = require('session_manager.config').AutoloadMode.Disabled }
 require 'lualine'.setup({ options = { theme = 'moonfly' } })
+require('dap-python').setup(string.format('%s/bin/python',venv),{ console = 'internalConsole' })
+require('dapui').setup()
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+    dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+    dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+    dapui.close()
+end

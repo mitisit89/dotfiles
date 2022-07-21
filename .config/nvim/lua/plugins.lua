@@ -39,5 +39,6 @@ return require('packer').startup(function(use)
     use "onsails/lspkind.nvim"
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use { "ellisonleao/glow.nvim", branch = 'main' }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use 'mfussenegger/nvim-dap-python'
 end)
