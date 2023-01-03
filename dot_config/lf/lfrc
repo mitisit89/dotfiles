@@ -1,0 +1,73 @@
+set ignorecase true
+set icons true
+set drawbox true
+set preview true
+set ifs "\n"
+set  shell bash
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx ;;
+		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx ;;
+		application/zip) unzip $f ;;
+		image/*) setsid -f sxiv -a $fx 2>/dev/null ;;
+		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2>&1 & done;;
+    esac
+}}
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+cmd fzf_jump ${{
+    res="$(fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+map q %{{
+  lf -remote "send $id :cd $OLDPWD; quit"
+}}
+map Q quit
+map f :fzf_jump
+map o
+map n
+map "'"
+map '"'
+map d
+push m-
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map af mkfile
+map ad mkdir
+map gc cd ~/.config
+map gm cd /mnt/
+map s shell
