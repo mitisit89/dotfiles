@@ -49,9 +49,20 @@ cmd fzf_jump ${{
     fi
     lf -remote "send $id $cmd \"$res\""
 }}
-map q %{{
-  lf -remote "send $id :cd $OLDPWD; quit"
+cmd wq ${{
+  tmp=$LF_LAST_DIR_PATH
+  lf -remote "send $id quit"
+  if [ -f "$tmp" ]; then
+    dir="$(cat "$tmp")"
+    rm -f "$tmp"
+    if [ -d "$dir" ]; then
+      if [ "$dir" != "$(pwd)" ]; then
+        cd "$dir"
+      fi
+    fi
+  fi
 }}
+map i lfcd
 map Q quit
 map f :fzf_jump
 map o
