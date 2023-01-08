@@ -141,4 +141,3 @@ export PROMPT_COMMAND="history -a; history -n"
 
 eval "$(starship init bash)"
 
-
