@@ -35,7 +35,7 @@ xsetroot -cursor_name left_ptr
 bspc rule -a firefox  desktop=II 
 bspc rule -a discord   desktop=III 
 bspc rule -a TelegramDesktop  desktop=III 
-bspc rule -a Pcmanfm  desktop=V
+bspc rule -a Thunar desktop=V
 bspc rule -a Steam desktop=VII
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating
