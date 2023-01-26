@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
 		"romgrk/barbar.nvim",
 		"Shatur/neovim-ayu",
 		"nvim-treesitter/nvim-treesitter",
+		{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		"lewis6991/gitsigns.nvim",
 		"nvim-lua/plenary.nvim",
 		-- LSP Support
@@ -36,5 +37,8 @@ return require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		"rafamadriz/friendly-snippets", -- Optional
 		"akinsho/toggleterm.nvim",
+		"lewis6991/gitsigns.nvim",
+		"TimUntersberger/neogit",
+      'numToStr/Comment.nvim',
 	})
 end)

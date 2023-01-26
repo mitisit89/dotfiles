@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -134,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neogit = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
+  },
   ["neovim-ayu"] = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/neovim-ayu",
@@ -183,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

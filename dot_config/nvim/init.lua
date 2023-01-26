@@ -14,10 +14,14 @@ require("mason-lspconfig").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = { "sumneko_lua", "gopls", "eslint", "pyright" },
 })
+require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").pyright.setup({})
 require("nvim-treesitter.configs").setup({})
+require("gitsigns").setup()
+local neogit = require("neogit")
+neogit.setup({})
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -40,7 +44,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 	},
 })
-
+require("telescope").setup()
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 cmp.setup({
