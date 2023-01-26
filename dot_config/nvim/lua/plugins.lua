@@ -2,7 +2,14 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use{ 'wbthomason/packer.nvim',
-  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+  {
+  'nvim-telescope/telescope.nvim', tag = '0.1.x'},
+  'nvim-lualine/lualine.nvim',
+  'jose-elias-alvarez/null-ls.nvim',
+  'nvim-tree/nvim-web-devicons',
+   'romgrk/barbar.nvim',
+  'Shatur/neovim-ayu',
+  'nvim-treesitter/nvim-treesitter',
 	'lewis6991/gitsigns.nvim' ,'nvim-lua/plenary.nvim',
 	{'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
