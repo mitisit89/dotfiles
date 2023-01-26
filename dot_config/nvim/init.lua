@@ -1,6 +1,7 @@
 require("plugins")
 require("general")
 require("keymaps")
+require("nvim-tree").setup()
 local lsp = require("lsp-zero")
 lsp.preset("recommended")
 lsp.setup_servers({ "tsserver", "eslint", "lua" })
@@ -47,3 +48,4 @@ local on_attach = function(client, bufnr)
 		})
 	end
 end
+

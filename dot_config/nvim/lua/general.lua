@@ -41,4 +41,8 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
