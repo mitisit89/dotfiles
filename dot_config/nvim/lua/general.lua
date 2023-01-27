@@ -58,7 +58,7 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("CursorHold", {
 	buffer = bufnr,
 	callback = function()
-		local opts = {
+		local opt = {
 			focusable = false,
 			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
 			border = "rounded",
@@ -66,6 +66,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 			prefix = " ",
 			scope = "line",
 		}
-		vim.diagnostic.open_float(nil, opts)
+		vim.diagnostic.open_float(nil, opt)
 	end,
 })

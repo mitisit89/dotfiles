@@ -17,7 +17,7 @@ require("mason-lspconfig").setup({
 require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({})
 require("lspconfig").gopls.setup({})
-require("lspconfig").pyright.setup({})
+require("lspconfig").pylsp.setup({})
 require("nvim-treesitter.configs").setup({})
 require("gitsigns").setup()
 local neogit = require("neogit")
@@ -91,5 +91,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "cmp-path" },
+		{ name = "buffer" },
 	},
 })
