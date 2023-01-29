@@ -8,7 +8,10 @@ require("ayu").setup({
 })
 require("lualine").setup()
 require("nvim-autopairs").setup({})
-require("toggleterm").setup()
+require("toggleterm").setup({
+	open_mapping = [[<c-\>]],
+	direction = "float",
+})
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup({
@@ -18,7 +21,11 @@ require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").pylsp.setup({})
-require("nvim-treesitter.configs").setup({})
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true,
+	},
+})
 require("gitsigns").setup()
 local neogit = require("neogit")
 neogit.setup({})
@@ -42,6 +49,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.gofmt,
 	},
 })
 require("telescope").setup()
