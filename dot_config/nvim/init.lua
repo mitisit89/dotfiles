@@ -18,7 +18,15 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "sumneko_lua", "gopls", "eslint", "pyright" },
 })
 require("Comment").setup()
-require("lspconfig").sumneko_lua.setup({})
+require("lspconfig").sumneko_lua.setup({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})
 require("lspconfig").gopls.setup({})
 require("lspconfig").pylsp.setup({})
 require("nvim-treesitter.configs").setup({
