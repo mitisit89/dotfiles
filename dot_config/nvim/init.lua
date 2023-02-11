@@ -15,7 +15,7 @@ require("toggleterm").setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "gopls", "eslint", "pyright" },
+	ensure_installed = { "sumneko_lua", "gopls", "eslint" },
 })
 require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({
@@ -58,6 +58,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.gofmt,
+		null_ls.builtins.diagnostics.mypy,
 	},
 })
 require("telescope").setup()
