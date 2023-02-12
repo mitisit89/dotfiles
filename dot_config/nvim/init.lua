@@ -13,9 +13,8 @@ require("toggleterm").setup({
 	direction = "float",
 })
 require("mason").setup()
-require("mason-lspconfig").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "gopls", "eslint" },
+	ensure_installed = { "sumneko_lua", "gopls", "eslint", "dockerls", "pylsp" },
 })
 require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({
@@ -24,11 +23,15 @@ require("lspconfig").sumneko_lua.setup({
 			diagnostics = {
 				globals = { "vim" },
 			},
+			telemetry = {
+				enable = false,
+			},
 		},
 	},
 })
 require("lspconfig").gopls.setup({})
 require("lspconfig").pylsp.setup({})
+require("lspconfig").dockerls.setup({})
 require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
