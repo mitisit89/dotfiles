@@ -30,7 +30,18 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 require("lspconfig").gopls.setup({})
-require("lspconfig").pylsp.setup({})
+require("lspconfig").pylsp.setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = { "W391" },
+					maxLineLength = 100,
+				},
+			},
+		},
+	},
+})
 require("lspconfig").dockerls.setup({})
 require("nvim-treesitter.configs").setup({
 	highlight = {
