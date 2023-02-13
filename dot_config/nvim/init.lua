@@ -14,7 +14,7 @@ require("toggleterm").setup({
 })
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "gopls", "eslint", "dockerls", "pylsp" },
+	ensure_installed = { "sumneko_lua", "gopls", "eslint", "dockerls", "pyright" },
 })
 require("Comment").setup()
 require("lspconfig").sumneko_lua.setup({
@@ -30,15 +30,12 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 require("lspconfig").gopls.setup({})
-require("lspconfig").pylsp.setup({
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					ignore = { "W391" },
-					maxLineLength = 100,
-				},
-			},
+require("lspconfig").pyright.setup({
+	python = {
+		analysis = {
+			autoSearchPaths = true,
+			diagnosticMode = "workspace",
+			useLibraryCodeForTypes = true,
 		},
 	},
 })
@@ -72,7 +69,6 @@ null_ls.setup({
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.gofmt,
-		null_ls.builtins.diagnostics.mypy,
 	},
 })
 require("telescope").setup()
