@@ -2,10 +2,10 @@
 text/x-shellscript=text.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 application/x-bittorrent=torrent.desktop;
-x-scheme-handler/mailto=userapp-Thunderbird-KPM9O1.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-4XI0Z1.desktop
 text/plain=nvim.desktop
 application/postscript=pdf.desktop;
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+application/pdf=org.pwmt.zathura.desktop
 image/png=img.desktop;
 image/jpeg=sxiv.desktop
 image/gif=img.desktop;
@@ -13,8 +13,8 @@ application/rss+xml=rss.desktop
 video/x-matroska=video.desktop
 x-scheme-handler/lbry=lbry.desktop
 inode/directory=pcmanfm.desktop
-message/rfc822=userapp-Thunderbird-KPM9O1.desktop
-x-scheme-handler/mid=userapp-Thunderbird-KPM9O1.desktop
+message/rfc822=userapp-Thunderbird-4XI0Z1.desktop
+x-scheme-handler/mid=userapp-Thunderbird-4XI0Z1.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-ZWDAP1.desktop
 text/calendar=userapp-Thunderbird-ZWDAP1.desktop
 application/x-extension-ics=userapp-Thunderbird-ZWDAP1.desktop
@@ -37,8 +37,8 @@ application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-m
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 
 [Added Associations]
-x-scheme-handler/mailto=userapp-Thunderbird-KPM9O1.desktop;
-x-scheme-handler/mid=userapp-Thunderbird-KPM9O1.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-KPM9O1.desktop;userapp-Thunderbird-4XI0Z1.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-KPM9O1.desktop;userapp-Thunderbird-4XI0Z1.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-ZWDAP1.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-ZWDAP1.desktop;
 x-scheme-handler/http=firefox.desktop;
@@ -55,4 +55,4 @@ image/webp=img.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-ARD4Q1.desktop;userapp-Telegram Desktop-WMT2U1.desktop;userapp-Telegram Desktop-3JJOW1.desktop;userapp-Telegram Desktop-BLA8W1.desktop;
 image/jpeg=sxiv.desktop;
 application/octet-stream=text.desktop;
-application/pdf=org.gnome.Evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
+application/pdf=org.gnome.Evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathura-pdf-poppler.desktop;
