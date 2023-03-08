@@ -16,6 +16,8 @@ map("n", "<leader>n", ":NvimTreeFindFile<CR>", opts)
 map("n", "<Leader>ff", builtin.find_files, opts)
 map("n", "<leader>fg", builtin.live_grep, opts)
 map("n", "<leader>fb", builtin.buffers, opts)
+map("n", "<leader>fs", builtin.lsp_document_symbols, opts)
+
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
