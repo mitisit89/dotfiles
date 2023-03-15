@@ -43,7 +43,7 @@
   icon_path =/usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-dark/16x16/devices/:/usr/share/icons/Papirus-dark/16x16/apps/
   frame_color = "#11111B"
   separator_color= frame
-  expire_timeout = 5
+  expire_timeout = 3
 
 [urgency_low]
 background = "#11111B"
