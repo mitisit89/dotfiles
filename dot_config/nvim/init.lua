@@ -9,15 +9,16 @@ require("ayu").setup({
 require("lualine").setup()
 require("nvim-autopairs").setup({})
 require("toggleterm").setup({
-	open_mapping = [[<c-\>]],
+	open_mapping = [[<c-t>]],
 	direction = "float",
 })
+
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "gopls", "eslint", "dockerls", "pyright" },
+	ensure_installed = { "lua_ls", "gopls", "eslint", "dockerls", "pylsp" },
 })
 require("Comment").setup()
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -31,12 +32,16 @@ require("lspconfig").sumneko_lua.setup({
 })
 require("lspconfig").gopls.setup({})
 require("lspconfig").bashls.setup({})
-require("lspconfig").pyright.setup({
-	python = {
-		analysis = {
-			autoSearchPaths = true,
-			diagnosticMode = "workspace",
-			useLibraryCodeForTypes = true,
+require("lspconfig").yamlls.setup({})
+require("lspconfig").pylsp.setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = { "W391" },
+					maxLineLength = 100,
+				},
+			},
 		},
 	},
 })
