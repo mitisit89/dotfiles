@@ -38,6 +38,7 @@ local opts = {
 	spelllang = "en",
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
+	timeoutlen = 550, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
 
 for key, value in pairs(opts) do
