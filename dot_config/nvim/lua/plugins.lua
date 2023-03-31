@@ -11,13 +11,17 @@ return require("packer").startup(function(use)
 			tag = "0.1.x",
 		},
 		"nvim-lualine/lualine.nvim",
+		"navarasu/onedark.nvim",
+		"tjdevries/colorbuddy.nvim",
+		"Th3Whit3Wolf/onebuddy",
 		"jose-elias-alvarez/null-ls.nvim",
+		"Th3Whit3Wolf/one-nvim",
 		"nvim-tree/nvim-web-devicons",
 		"romgrk/barbar.nvim",
 		"Shatur/neovim-ayu",
 		"nvim-treesitter/nvim-treesitter",
+		{ "bluz71/vim-moonfly-colors", as = "moonfly" },
 		{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-		"lewis6991/gitsigns.nvim",
 		"nvim-lua/plenary.nvim",
 		-- LSP Support
 		"neovim/nvim-lspconfig", -- Required
@@ -39,6 +43,6 @@ return require("packer").startup(function(use)
 		"akinsho/toggleterm.nvim",
 		"lewis6991/gitsigns.nvim",
 		"TimUntersberger/neogit",
-      'numToStr/Comment.nvim',
+		"numToStr/Comment.nvim",
 	})
 end)
