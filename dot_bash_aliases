@@ -5,6 +5,7 @@ alias ga='git add '
 alias gcm='git commit -m'
 alias gb='git branch'
 alias code='codium'
+alias dnf='sudo dnf'
 #Make directory & enter it
 mkcd() {
    mkdir -p $1
