@@ -35,8 +35,8 @@ elif [ "${SHELL##*/}" = "zsh" ]; then
   export ZDOTDIR="$HOME/.config/zsh"
   export HISTFILE="${XDG_STATE_HOME}"/zsh/history
   source "$ZDOTDIR/.zshrc"
+  source "$HOME/.bash_aliases"
 fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
