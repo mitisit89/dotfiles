@@ -1,3 +1,17 @@
+function load_shell(){
+if [ "${SHELL##*/}" = "bash" ]; then
+  source "$HOME/.bashrc"
+  export HISTFILE="${XDG_STATE_HOME}"/bash/history
+elif [ "${SHELL##*/}" = "zsh" ]; then
+  export ZDOTDIR="$HOME/.config/zsh"
+  export HISTFILE="${XDG_STATE_HOME}"/zsh/history
+  source "$ZDOTDIR/.zshrc"
+  source "$HOME/.bash_aliases"
+fi
+} 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 export PATH
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -28,15 +42,5 @@ export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export QT_STYLE_OVERRIDE="kvantum"
 
-if [ "${SHELL##*/}" = "bash" ]; then
-  source "$HOME/.bashrc"
-  export HISTFILE="${XDG_STATE_HOME}"/bash/history
-elif [ "${SHELL##*/}" = "zsh" ]; then
-  export ZDOTDIR="$HOME/.config/zsh"
-  export HISTFILE="${XDG_STATE_HOME}"/zsh/history
-  source "$ZDOTDIR/.zshrc"
-  source "$HOME/.bash_aliases"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+load_shell
+
