@@ -13,9 +13,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-source ~/.config/zsh/zsh-autosuggetions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -26,6 +25,17 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+function fh() {
+  local cmd=$(history | tac | fzf --reverse | sed 's/ *[0-9]* *//')
+  if [ -n "$cmd" ]; then
+    echo "$cmd"
+    eval "$cmd"
+  fi
+}
+
+
+zle -N fh
+bindkey '^R' fh
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
