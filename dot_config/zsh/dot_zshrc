@@ -3,6 +3,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 setopt autocd
 setopt interactive_comments
+set -o noglob
 stty stop undef
 autoload -U colors && colors	 
 autoload -U compinit && compinit -u
@@ -15,6 +16,7 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.bash_aliases  
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
