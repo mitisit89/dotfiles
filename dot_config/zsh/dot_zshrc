@@ -28,7 +28,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 function fh() {
-  local cmd=$(history | tac | fzf --reverse | sed 's/ *[0-9]* *//')
+  local cmd=$(fc -l 0 | tac | fzf --reverse | sed 's/ *[0-9]* *//')
   if [ -n "$cmd" ]; then
     echo "$cmd"
     eval "$cmd"
