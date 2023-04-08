@@ -40,7 +40,6 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
 export QT_QPA_PLATFORMTHEME="qt6ct"
-export QT_STYLE_OVERRIDE="kvantum"
 
 load_shell
 
