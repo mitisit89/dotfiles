@@ -29,7 +29,8 @@ redshift-gtk &
 # Wallpaper
 nitrogen --restore &
 # Dex
-dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
+dex-autostart -a -s /etc/xdg/autostart/:~/.config/autostart/ &
+setxkbmap -option 'grp:alt_space_toggle' & 
 xsetroot -cursor_name left_ptr 
 #Rules
 bspc rule -a firefox  desktop=II 
