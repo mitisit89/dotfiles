@@ -2,12 +2,11 @@ function load_shell(){
 if [ "${SHELL##*/}" = "bash" ]; then
   source "$HOME/.bashrc"
 elif [ "${SHELL##*/}" = "zsh" ]; then
-  export HISTFILE="${XDG_STATE_HOME}"/zsh/history
   source "$ZDOTDIR/.zshrc"
-  source "$HOME/.bash_aliases"
 fi
 } 
 
+source "$HOME/.bash_aliases"
 export ZDOTDIR="$HOME/.config/zsh"
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export PATH
@@ -38,9 +37,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
 export QT_QPA_PLATFORMTHEME="qt6ct"
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+
 
 load_shell
 
