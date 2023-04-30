@@ -127,7 +127,14 @@ screens = [
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
+
+                widget.KeyboardLayout(),
                 widget.Clock(format="%a, %d %b %y %H:%M:%S"),
+                widget.DF(),
+                widget.CPU(),
+                widget.Memory(measure_mem='G'),
+                widget.CheckUpdates(distro='Fedora'),
+                widget.Volume(fmt='Vol: {}'),
                 widget.Systray(),
                 widget.QuickExit(),
             ),
