@@ -6,7 +6,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:FiraMono Nerd Font 10
+font pango:,FiraCode  Nerd Font Regular 11
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -138,25 +138,25 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
+
+set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
+set $ws3 "3: "
+set $ws4 "4"
+set $ws5 "5:"
+set $ws6 "6:阮"
+set $ws7 "7:󰓓 "
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
 # bind program to workspace and focus to them on startup:
 assign [class="(?i)firefox"] $ws2
-assign [class="Pcmanfm"] $ws3
+assign [class="Pcmanfm"] $ws4
 assign [class="Thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
-assign [class="discord"] $ws5
-assign [class="Steam"] $ws6
-for_window [class="Spotify"] move to workspace $ws7, workspace --no-auto-back-and-forth $ws7
+assign [class="TelegramDesktop"] $ws3
+assign [class="discord"] $ws3
+assign [class="Steam"] $ws7
+for_window [class="Spotify"] move to workspace $ws6, workspace --no-auto-back-and-forth $ws6
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class="Alacritty"] focus
@@ -186,7 +186,6 @@ exec --no-startup-id nitrogen --restore
 for_window [class="Galculator" instance="galculator"] floating enable
 
 #set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 
@@ -215,9 +214,23 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 
 ############################################
-# bar settings (polybar) #
+# bar settings #
 ############################################
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+bar {
+
+    position top
+    status_command i3status-rs $HOME/.config/i3/config.toml
+    strip_workspace_numbers yes
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}
 #####################################
 # Application menu handled by rofi: #
 #####################################
@@ -228,7 +241,8 @@ bindsym $mod+d exec bash ~/.config/rofi/launchers/type-2/launcher.sh
 bindsym F9 exec rofi-show drun 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
-bindsym $mod+t exec rofi -show window
+bindsym $mod+t exec bash ~/.config/rofi/launchers/type-2/launcher2.sh
+
 
 bindsym F11 exec rofi -show -dmenu  ~/.config/rofi/powermenu.sh
 mode "resize" {
