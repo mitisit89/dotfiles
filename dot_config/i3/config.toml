@@ -8,9 +8,24 @@ block = "time"
 interval = 5
 format = " $timestamp.datetime(f:'%a, %d %b %y %R')" 
 
-# [[block]]
-# block = "keyboard_layout"
-# driver ="localebus"
+[[block]]
+block = "battery"
+format = " $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+missing_format = ""
+[[block]]
+block = "bluetooth"
+mac = "00:18:09:92:1B:BA"
+disconnected_format = ""
+format = " $icon "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
 [[block]]
 block = "disk_space"
 path = "/"
@@ -20,13 +35,6 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = "$icon $available.eng(w:2)"
-[[block]]
-block = "dnf"
-interval = 1800
-format = " $icon $count.eng(w:1)"
-format_singular = " $icon One update available "
-format_up_to_date = " $icon system up to date "
-critical_updates_regex = "(linux|linux-lts|linux-zen)"
 
 [[block]]
 block = "memory"
