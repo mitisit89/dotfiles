@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -143,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  moonfly = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/moonfly",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   neogit = {
     loaded = true,
@@ -198,16 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/one-nvim",
     url = "https://github.com/Th3Whit3Wolf/one-nvim"
-  },
-  onebuddy = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/onebuddy",
-    url = "https://github.com/Th3Whit3Wolf/onebuddy"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
