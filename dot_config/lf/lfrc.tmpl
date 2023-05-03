@@ -27,7 +27,7 @@ cmd open {{ "${{" }}
     esac
 {{ "}}" }}
 
-cmd trash{{ "${{" }} 
+cmd trash {{ "${{" }} 
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
@@ -40,7 +40,7 @@ cmd trash{{ "${{" }}
     fi
   done
 {{ "}}" }}
-cmd fzf_jump{{ "${{" }}
+cmd fzf_jump {{ "${{" }}
   
     res="$({{if eq .chezmoi.osRelease.id "pop"}}fdfind{{else}}fd{{end}} . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
