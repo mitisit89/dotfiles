@@ -42,7 +42,7 @@ cmd trash{{ "${{" }}
 {{ "}}" }}
 cmd fzf_jump{{ "${{" }}
   
-    res="$({{if eq .chezmoi.osRelease.id "pop" }}fdind {{else}}fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$({{if eq .chezmoi.osRelease.id "pop" }}fdind fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
