@@ -4,18 +4,19 @@ set drawbox true
 set preview true
 set ifs "\n"
 set  shell bash
-cmd mkdir ${{
+
+cmd: mkdir {{ "${{" }}
   printf "Directory Name: "
   read ans
   mkdir $ans
-}}
-cmd mkfile ${{
-  printf "File Name: "
+{{ "}}" }}
+cmd mkfile {{ "${{" }} 
+printf "File Name: "
   read ans
   $EDITOR $ans
-}}
+{{ "}}" }}
 
-cmd open ${{
+cmd open {{ "${{" }}
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx ;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx ;;
@@ -24,8 +25,9 @@ cmd open ${{
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2>&1 & done;;
     esac
-}}
-cmd trash ${{
+{{ "}}" }}
+
+cmd trash{{ "${{" }} 
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
@@ -37,8 +39,11 @@ cmd trash ${{
       files="${files#*;}"
     fi
   done
-}}
-cmd fzf_jump ${{
+{{ "}}" }}
+cmd fzf_jump{{ "${{" }}
+  {{if eq .chezmoi.osRelease.id "pop" }}
+    res="$(fdfind . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  {{else}}
     res="$(fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
@@ -48,8 +53,12 @@ cmd fzf_jump ${{
         exit 0
     fi
     lf -remote "send $id $cmd \"$res\""
-}}
-cmd wq ${{
+    {{ end }}
+
+{{ "}}" }}
+
+cmd wq {{ "${{" }}
+
   tmp=$LF_LAST_DIR_PATH
   lf -remote "send $id quit"
   if [ -f "$tmp" ]; then
@@ -61,7 +70,8 @@ cmd wq ${{
       fi
     fi
   fi
-}}
+{{ "}}" }}
+
 map i lfcd
 map Q quit
 map f :fzf_jump
