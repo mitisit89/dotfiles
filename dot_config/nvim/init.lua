@@ -52,8 +52,14 @@ require("nvim-treesitter.configs").setup({
   },
 })
 require("gitsigns").setup()
+-- local actions = require("diffview.actions")
+-- require("diffview").setup()
 local neogit = require("neogit")
-neogit.setup({})
+neogit.setup({
+  -- integrations = {
+  --   diffview = true
+  -- }
+})
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 null_ls.setup({

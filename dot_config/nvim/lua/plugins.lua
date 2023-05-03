@@ -27,6 +27,7 @@ return require("packer").startup({
       "jose-elias-alvarez/null-ls.nvim",
       "Th3Whit3Wolf/one-nvim",
       "nvim-tree/nvim-web-devicons",
+      'sindrets/diffview.nvim',
       "romgrk/barbar.nvim",
       "Shatur/neovim-ayu",
       "nvim-treesitter/nvim-treesitter",
