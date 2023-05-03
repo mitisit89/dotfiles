@@ -41,10 +41,8 @@ cmd trash{{ "${{" }}
   done
 {{ "}}" }}
 cmd fzf_jump{{ "${{" }}
-  {{if eq .chezmoi.osRelease.id "pop" }}
-    res="$(fdfind . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-  {{else}}
-    res="$(fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  
+    res="$({{if eq .chezmoi.osRelease.id "pop" }}fdind {{else}}fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
@@ -54,7 +52,6 @@ cmd fzf_jump{{ "${{" }}
     fi
     lf -remote "send $id $cmd \"$res\""
     {{ end }}
-
 {{ "}}" }}
 
 cmd wq {{ "${{" }}
