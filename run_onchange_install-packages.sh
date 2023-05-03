@@ -2,8 +2,7 @@
 #!/bin/sh
 mkdir ~/.local/state/{bash,zsh} 
 mkdir ~/.local/bin/
-{{ end -}}
-{{ if eq .chezmoi.osRelease.id "pop" -}}
+{{ else if eq .chezmoi.osRelease.id "pop" -}}
 #!/bin/sh
 sudo apt install -y ripgrep fzf curl
  
