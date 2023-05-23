@@ -3,6 +3,11 @@ type='archive'
 url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraMono.zip'
 format='zip'
 exclude=["*.md "]
+[".local/share/fonts/Hack"]
+type='archive'
+url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/Hack.zip'
+format='zip'
+exclude=["*.md"]
 
 [".local/share/fonts/FiraCode"]
 type='archive'
