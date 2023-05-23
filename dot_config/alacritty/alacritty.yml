@@ -1,52 +1,19 @@
-window:
-  # Allow terminal applications to change Alacritty's window title.
+window: # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family 
-     Default:
-    #   - (Windows) Consolas
-       family: " FiraCode Nerd Font Mono"
-
-    # The `style` can be specified to pick a specific face.
-     style: "Regular"
-
-  # Bold font face
-  bold:
-    family:
-      " FiraCode Nerd Font Mono"
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Italic font face
-  italic:
-    family:
-      " FiraCode Nerd Font Mono"
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-    # The `style` can be specified to pick a specific face.
-    style: Italic
-
-  # Bold italic font face
+    family: FiraCode Nerd Font
+    style: Regular
+    bold:
+      family: FiraCode Nerd Font
+      style: Bold
+    italic:
+      family: FiraCode Nerd Font
+      style: Italic
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: "FiraCode Nerd Font Mono"
-
-   # The `style` can be specified to pick a specific face.
+    family: FiraCode Nerd Font
     style: Bold Italic
-
-  # Point size
   size: 13.0
 # Colors
 colors:
