@@ -3,18 +3,18 @@ window: # Allow terminal applications to change Alacritty's window title.
 # Font configuration
 font:
   normal:
-    family: HackNerd Font Mono
+    family: Hack Nerd Font Mono
     style: Regular
     bold:
-      family:  HackNerd Nerd Font
+      family:  Hack Nerd Font   
       style: Bold
     italic:
-      family:  HackNerdNerd Font
+      family:  Hack Nerd Font
       style: Italic
   bold_italic:
-    family:  HackNerdNerd Font
+    family:  Hack Nerd Font
     style: Bold Italic
-  size: 13.0
+  size: 14.0
 # Colors
 colors:
   # Default colors
