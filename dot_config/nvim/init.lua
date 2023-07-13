@@ -6,7 +6,6 @@ require("ayu").colorscheme()
 require("ayu").setup({
   mirage = false,
 })
-require("lualine").setup()
 require("nvim-autopairs").setup({})
 require("toggleterm").setup({
   open_mapping = [[<c-t>]],
@@ -51,6 +50,10 @@ require("nvim-treesitter.configs").setup({
     enable = true,
   },
 })
+require 'lspconfig'.volar.setup {
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+}
+require 'lspconfig'.tsserver.setup {}
 require("gitsigns").setup()
 -- local actions = require("diffview.actions")
 -- require("diffview").setup()
@@ -144,3 +147,5 @@ cmp.setup({
     { name = "buffer" },
   },
 })
+
+require("lualine").setup()

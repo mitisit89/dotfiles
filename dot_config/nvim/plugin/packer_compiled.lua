@@ -147,7 +147,7 @@ _G.packer_plugins = {
   neogit = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
+    url = "https://github.com/NeogitOrg/neogit"
   },
   ["neovim-ayu"] = {
     loaded = true,
