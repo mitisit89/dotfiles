@@ -29,15 +29,15 @@ redshift-gtk &
 # Wallpaper
 nitrogen --restore &
 # Dex
-dex-autostart -a -s /etc/xdg/autostart/:~/.config/autostart/ &
-setxkbmap -option 'grp:alt_space_toggle' & 
+dex  -a -s /etc/xdg/autostart/:~/.config/autostart/ &
+setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:alt_space_toggle' & 
 xsetroot -cursor_name left_ptr 
 #Rules
 bspc rule -a firefox  desktop=II 
 bspc rule -a discord   desktop=III 
 bspc rule -a TelegramDesktop  desktop=III 
 bspc rule -a Pcmanfm desktop=V
-bspc rule -a steamwebhelper desktop=VII
+bspc rule -a steam desktop=VII
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Zathura state=tiled
