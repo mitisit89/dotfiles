@@ -7,6 +7,7 @@ require("ayu").colorscheme()
 require("ayu").setup({
 	mirage = false,
 })
+-- c0
 require("nvim-autopairs").setup({})
 require("toggleterm").setup({
 	open_mapping = [[<c-t>]],
@@ -56,6 +57,7 @@ require("telescope").setup({
 		},
 	},
 })
+require("telescope").load_extension("harpoon")
 require("telescope").load_extension("fzf")
 local luasnip = require("luasnip")
 local cmp = require("cmp")

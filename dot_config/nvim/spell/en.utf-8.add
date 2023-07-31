@@ -1,0 +1,6 @@
+InsertLeave
+InsertEnter
+CursorHold
+BufLeave
+CursorMoved
+FocusLost

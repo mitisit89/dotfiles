@@ -28,7 +28,7 @@ return require("packer").startup({
 			"Th3Whit3Wolf/one-nvim",
 			"nvim-tree/nvim-web-devicons",
 			"sindrets/diffview.nvim",
-			"romgrk/barbar.nvim",
+			--	"romgrk/barbar.nvim",
 			"Shatur/neovim-ayu",
 			"nvim-treesitter/nvim-treesitter",
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
@@ -54,6 +54,7 @@ return require("packer").startup({
 			"lewis6991/gitsigns.nvim",
 			"NeogitOrg/neogit",
 			"numToStr/Comment.nvim",
+			"ThePrimeagen/harpoon",
 		})
 
 		if packer_bootstrap then
