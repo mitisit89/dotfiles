@@ -1,11 +1,11 @@
 set ignorecase true
 set icons true
 set drawbox true
-set preview true
-set ifs "\n"
+set preview 
+set previewer ~/.config/lf/preview.sh
 set  shell zsh
 
-cmd: mkdir ${{
+cmd mkdir ${{
   printf "Directory Name: "
   read ans
   mkdir $ans
@@ -42,7 +42,7 @@ cmd trash ${{
 }}
 cmd fzf_jump ${{
   
-    res="$(fd . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$(fdfind . -H -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
