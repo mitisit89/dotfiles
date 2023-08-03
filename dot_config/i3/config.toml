@@ -1,5 +1,5 @@
-# [theme]
-# theme = "modern"
+ [theme]
+ theme = "modern"
 
 [icons]
 icons = "material-nf"
