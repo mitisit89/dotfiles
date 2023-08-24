@@ -3,8 +3,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 setopt autocd
 setopt interactive_comments
-set -o noglob
-stty stop undef
+setopt extendedglob
 autoload -U colors && colors	 
 autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
@@ -21,7 +20,7 @@ source ~/.bash_aliases
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-
+setopt +o nomatch
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -64,3 +63,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 eval "$(starship init zsh)"
+
+# fnm
+export PATH="/home/mitisit/.local/share/fnm:$PATH"
+eval "`fnm env`"
