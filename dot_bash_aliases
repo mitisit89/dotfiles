@@ -19,4 +19,4 @@ alias lg='lazygit'
 alias uptime="uptime -p"
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
-alias df ='df -h'
+alias df='df -h'
