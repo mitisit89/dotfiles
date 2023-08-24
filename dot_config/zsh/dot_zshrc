@@ -65,5 +65,5 @@ fi
 eval "$(starship init zsh)"
 
 # fnm
-export PATH="/home/mitisit/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
