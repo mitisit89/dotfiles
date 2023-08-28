@@ -7,7 +7,6 @@ require("ayu").colorscheme()
 require("ayu").setup({
 	mirage = false,
 })
--- c0
 require("nvim-autopairs").setup({})
 require("toggleterm").setup({
 	open_mapping = [[<c-t>]],
@@ -16,6 +15,8 @@ require("toggleterm").setup({
 
 require("Comment").setup()
 require("nvim-treesitter.configs").setup({
+	sync_install = false,
+	ensure_installed = { "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
 	highlight = {
 		enable = true,
 	},
