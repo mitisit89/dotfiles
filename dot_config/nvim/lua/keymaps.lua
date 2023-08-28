@@ -21,3 +21,4 @@ map("v", ">", ">gv", opts)
 
 map("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<CR>', opts)
 map("n", "<leader>l", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
+map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)

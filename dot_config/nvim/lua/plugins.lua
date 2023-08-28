@@ -55,6 +55,7 @@ return require("packer").startup({
 			"NeogitOrg/neogit",
 			"numToStr/Comment.nvim",
 			"ThePrimeagen/harpoon",
+			"folke/trouble.nvim",
 		})
 
 		if packer_bootstrap then
