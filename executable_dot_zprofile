@@ -1,4 +1,5 @@
 export PATH
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export ZDOTDIR="$HOME/.config/zsh"
 source "$ZDOTDIR/.zshrc"
 export EDITOR='nvim'
