@@ -220,6 +220,7 @@ bar {
     position top
     status_command $HOME/.local/share/cargo/bin/i3status-rs $HOME/.config/i3/config.toml
     strip_workspace_numbers yes
+  workspace_min_width 30
     colors {
         separator #666666
         background #222222
@@ -232,7 +233,7 @@ bar {
 }
 #####################################
 # Application menu handled by rofi: #
-#####################################
+###############################
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
