@@ -1,6 +1,18 @@
 require("mason").setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+local sign_cfg = {
+	bind = true,
+	floating_window = true,
+	hint_enable = false,
+	handler_opts = {
+		border = "rounded",
+	},
+}
+local on_attach = function(client, bufnr)
+	require("lsp_signature").on_attach(sign_cfg, bufnr)
+end
+
 local servers = {
 	pylsp = {
 		settings = {
@@ -12,11 +24,13 @@ local servers = {
 					},
 				},
 			},
-			capabilities = capabilities,
 		},
 	},
 	lua_ls = {
 		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
 		},

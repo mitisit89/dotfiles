@@ -22,9 +22,18 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
-require("gitsigns").setup()
-local neogit = require("neogit")
-neogit.setup({})
+require("gitsigns").setup({
+	current_line_blame_opts = {
+		virt_text = true,
+		virt_text_pos = "overlay", -- 'eol' | 'overlay' | 'right_align'
+		delay = 1000,
+		ignore_whitespace = false,
+	},
+})
+vim.cmd([[ highlight  gitsignscurrentlineblame guibg=#191724 guifg=#ffffff]])
+require("dashboard").setup({
+	-- config
+})
 -- local null_ls = require("null-ls")
 -- null_ls.setup({
 -- 	on_attach = function(client, bufnr)
@@ -107,7 +116,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "cmp-path" },
+		{ name = "async_path" },
 		{ name = "buffer" },
 	},
 })

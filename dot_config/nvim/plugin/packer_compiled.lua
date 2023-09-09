@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cmp-async-path"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp-async-path",
+    url = "https://github.com/FelipeLema/cmp-async-path"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -99,15 +104,15 @@ _G.packer_plugins = {
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -124,10 +129,20 @@ _G.packer_plugins = {
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["guard.nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/guard.nvim",
+    url = "https://github.com/nvimdev/guard.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -143,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  neogit = {
-    loaded = true,
-    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/NeogitOrg/neogit"
   },
   ["neovim-ayu"] = {
     loaded = true,
@@ -213,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/mitisit/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,

@@ -2,7 +2,7 @@ local ft = require("guard.filetype")
 
 ft("lua"):fmt("stylua")
 ft("python"):fmt("black"):append("isort")
-ft("go"):fmt("lsp"):append("gofmt"):lint("golangci")
+
 -- Call setup() LAST!
 require("guard").setup({
 	-- the only options for the setup function
