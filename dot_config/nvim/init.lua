@@ -2,6 +2,7 @@ require("plugins")
 require("general")
 require("keymaps")
 require("lsp")
+require("formatters")
 require("nvim-tree").setup()
 require("ayu").colorscheme()
 require("ayu").setup({
@@ -24,30 +25,31 @@ require("nvim-treesitter.configs").setup({
 require("gitsigns").setup()
 local neogit = require("neogit")
 neogit.setup({})
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local null_ls = require("null-ls")
-null_ls.setup({
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
-				end,
-			})
-		end
-	end,
-	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.formatting.isort,
-		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.gofmt,
-	},
-})
+-- local null_ls = require("null-ls")
+-- null_ls.setup({
+-- 	on_attach = function(client, bufnr)
+-- 		if client.supports_method("textDocument/formatting") then
+-- 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+-- 			vim.api.nvim_create_autocmd("BufWritePre", {
+-- 				group = augroup,
+-- 				buffer = bufnr,
+-- 				callback = function()
+-- 					vim.lsp.buf.format({ bufnr = bufnr })
+-- 				end,
+-- 			})
+-- 		end
+-- 	end,
+-- 	sources = {
+-- 		null_ls.builtins.formatting.stylua,
+-- 		null_ls.builtins.diagnostics.eslint,
+-- 		null_ls.builtins.formatting.black,
+-- 		null_ls.builtins.formatting.gofmt,
+-- 	},
+-- })
 require("telescope").setup({
+	defaults = {
+		file_ignore_patterns = { ".venv", ".git" },
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
