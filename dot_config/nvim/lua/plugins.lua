@@ -56,6 +56,7 @@ return require("packer").startup({
 			"numToStr/Comment.nvim",
 			"ThePrimeagen/harpoon",
 			"folke/trouble.nvim",
+			"nvimdev/guard.nvim",
 		})
 
 		if packer_bootstrap then
