@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 ## Author  : Aditya Shakya (adi1090x)
 ## Github  : @adi1090x
