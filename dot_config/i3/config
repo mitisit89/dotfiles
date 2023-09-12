@@ -1,4 +1,3 @@
-{{if eq .chezmoi.hostname "debian"}}
 #######################
 # config starts here: #
 #######################
@@ -264,4 +263,3 @@ mode "resize" {
 
 # Enter resize mode
 bindsym $mod+r mode "resize"
-{{end}}
