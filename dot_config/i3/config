@@ -151,7 +151,7 @@ set $ws9 "9"
 set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="firefox"] $ws2
-assign [class="Pcmanfm"] $ws4
+assign [class="Thunar"] $ws4
 assign [class="TelegramDesktop"] $ws3
 assign [class="discord"] $ws3
 assign [class="steam"] $ws6
