@@ -35,10 +35,14 @@ local servers = {
 			telemetry = { enable = false },
 		},
 	},
-	bashls = {},
+	bashls = {
+		filetypes = { "sh", "zsh", "bash" },
+	},
 	gopls = {},
 	yamlls = {},
 	dockerls = {},
+	tsserver = { hostInfo = "neovim" },
+	svelte = {},
 }
 
 local mason_lspconfig = require("mason-lspconfig")
