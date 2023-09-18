@@ -1,9 +1,20 @@
-require("plugins")
-require("general")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  -- bootstrap lazy.nvim
+  -- stylua: ignore
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+end
+vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+
+
+
+
+vim.g.mapleader = " "
+require("lazy").setup('plugins')
 require("keymaps")
+require("general")
 require("lsp")
 require("formatters")
-require("nvim-tree").setup()
 require("ayu").colorscheme()
 require("ayu").setup({
 	mirage = false,
@@ -15,59 +26,24 @@ require("toggleterm").setup({
 })
 
 require("Comment").setup()
-require("nvim-treesitter.configs").setup({
-	sync_install = false,
-	ensure_installed = { "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
-	highlight = {
-		enable = true,
-	},
-})
-require("gitsigns").setup({
-	current_line_blame_opts = {
-		virt_text = true,
-		virt_text_pos = "overlay", -- 'eol' | 'overlay' | 'right_align'
-		delay = 1000,
-		ignore_whitespace = false,
-	},
-})
+-- require("nvim-treesitter.configs").setup({
+-- 	sync_install = false,
+-- 	ensure_installed = { "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
+-- 	highlight = {
+-- 		enable = true,
+-- 	},
+-- })
+-- require("gitsigns").setup({
+-- 	current_line_blame_opts = {
+-- 		virt_text = true,
+-- 		virt_text_pos = "overlay", -- 'eol' | 'overlay' | 'right_align'
+-- 		delay = 1000,
+-- 		ignore_whitespace = false,
+-- 	},
+-- })
 vim.cmd([[ highlight  gitsignscurrentlineblame guibg=#191724 guifg=#ffffff]])
 require("dashboard").setup({
 	-- config
-})
--- local null_ls = require("null-ls")
--- null_ls.setup({
--- 	on_attach = function(client, bufnr)
--- 		if client.supports_method("textDocument/formatting") then
--- 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
--- 			vim.api.nvim_create_autocmd("BufWritePre", {
--- 				group = augroup,
--- 				buffer = bufnr,
--- 				callback = function()
--- 					vim.lsp.buf.format({ bufnr = bufnr })
--- 				end,
--- 			})
--- 		end
--- 	end,
--- 	sources = {
--- 		null_ls.builtins.formatting.stylua,
--- 		null_ls.builtins.diagnostics.eslint,
--- 		null_ls.builtins.formatting.black,
--- 		null_ls.builtins.formatting.gofmt,
--- 	},
--- })
-require("telescope").setup({
-	defaults = {
-		file_ignore_patterns = { ".venv", ".git" },
-	},
-	extensions = {
-		fzf = {
-			fuzzy = true, -- false will only do exact matching
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
-		},
-	},
 })
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("fzf")
@@ -121,4 +97,3 @@ cmp.setup({
 	},
 })
 
-require("lualine").setup()
