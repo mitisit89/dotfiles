@@ -21,4 +21,5 @@ return {
 	"folke/todo-comments.nvim",
 	"nvimdev/guard-collection",
 	"bluz71/vim-moonfly-colors",
+	"folke/tokyonight.nvim",
 }
