@@ -12,9 +12,6 @@ require("keymaps")
 require("general")
 require("lsp")
 require("formatters")
-require("ayu").colorscheme()
-require("ayu").setup({
-	mirage = false,
-})
-vim.cmd([[ highlight  gitsignscurrentlineblame guibg=#191724 guifg=#ffffff]])
+
+
 
