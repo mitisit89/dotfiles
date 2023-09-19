@@ -6,7 +6,7 @@ return {
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
-			ensure_installed = {  "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
+			ensure_installed = { "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },
