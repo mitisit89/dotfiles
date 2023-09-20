@@ -38,11 +38,12 @@ local servers = {
 	bashls = {
 		filetypes = { "sh", "zsh", "bash" },
 	},
-	gopls = {},
+	gopls = {
+		staticcheck = true,
+	},
 	yamlls = {},
 	dockerls = {},
 	tsserver = { hostInfo = "neovim" },
-	svelte = {},
 }
 
 local mason_lspconfig = require("mason-lspconfig")

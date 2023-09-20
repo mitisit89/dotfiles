@@ -12,6 +12,4 @@ return {
 	"nvimdev/guard.nvim",
 	"folke/todo-comments.nvim",
 	"nvimdev/guard-collection",
-	
-	"folke/tokyonight.nvim",
 }

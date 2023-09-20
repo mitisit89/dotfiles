@@ -57,9 +57,9 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.relativenumber = false
 	end,
 })
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+--
 -- vim.diagnostic.config({
 -- 	virtual_text = false,
 -- 	signs = true,
@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- 	update_in_insert = false,
 -- 	severity_sort = false,
 -- })
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },
 	{ name = "DiagnosticSignWarn", text = "" },
@@ -78,9 +78,9 @@ local signs = {
 for _, sign in ipairs(signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
-for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
+for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
-  end
+end
 local config = {
 	virtual_text = false,
 	signs = {

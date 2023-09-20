@@ -12,6 +12,3 @@ require("keymaps")
 require("general")
 require("lsp")
 require("formatters")
-
-
-
