@@ -6,7 +6,7 @@ font:
     family: Hack Nerd Font Mono
     style: Regular
     bold:
-      family:  Hack Nerd Font   
+      family:  Hack Nerd Nerd Font   
       style: Bold
     italic:
       family:  Hack Nerd Font
@@ -16,43 +16,44 @@ font:
     style: Bold Italic
   size: 14.0
 # Colors
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x0f1419'
-    foreground: '0xe6e1cf'
+    background: '0x24283b'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xf34a4a'
-    green:   '0xbae67e'
-    yellow:  '0xffee99'
-    blue:    '0x73d0ff'
-    magenta: '0xd4bfff'
-    cyan:    '0x83CEC6'
-    white:   '0xf2f2f2'
+    black:   '0x1d202f'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black:   '0x737d87'
-    red:     '0xff3333'
-    green:   '0xc2d94c'
-    yellow:  '0xe7c547'
-    blue:    '0x59c2ff'
-    magenta: '0xb77ee0'
-    cyan:    '0x5ccfe6'
-    white:   '0xffffff'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
 cursor:
   # Cursor style
   style:
     shape: 
-     Beam
+      Beam
 
-  vi_mode_style: 
-     Block
-  blinking:
-      On
 
   # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
