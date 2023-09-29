@@ -166,7 +166,7 @@ for_window [class="Alacritty"] focus
 
 #get auth work with polkit-gnome
 exec --no-startup-id lxpolkit
-exec setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:alt_space_toggle'
+# exec setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:alt_space_toggle'
 # dex execute .desktop files
 # keep in mind that it can cause issues 
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
@@ -183,7 +183,6 @@ exec --no-startup-id nitrogen --restore
 # Autostart apps as you like
 # set floating (nontiling)for apps needing it
 for_window [class="Galculator" instance="galculator"] floating enable
-
 #set floating (nontiling) for special apps
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
@@ -192,28 +191,18 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 # color settings for bar and windows #
 ###################################### 
 # Define colors variables: 
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#212121
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
-set $orange #FFCC80
+set $black #000000
+set $tokio_bg #1A1B26
+set $tokio_fg #A9B1D6
+set $tokio_accent #67AEEE
+set $tokio_border #25283E
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkgrey 	$white		$purple		$orange
-client.unfocused	    $darkblue	$darkgrey 	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkgrey 	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
-
-
-############################################
-# bar settings #
+ 
+client.focused      $tokio_accent    $tokio_accent     $black    $tokio_accent $tokio_accent
+client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+        # bar settings #
 ############################################
 bar {
    font pango:FiraCode NerdFont Mono 12
@@ -222,14 +211,9 @@ bar {
     strip_workspace_numbers yes
   workspace_min_width 30
     colors {
-        separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
-    }
+         background $tokio_bg
+        statusline $tokio_fg
+        separator $tokio_accent    }
 }
 #####################################
 # Application menu handled by rofi: #
