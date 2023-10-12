@@ -44,6 +44,7 @@ local servers = {
 	yamlls = {},
 	dockerls = {},
 	tsserver = { hostInfo = "neovim" },
+	marksman = {},
 }
 
 local mason_lspconfig = require("mason-lspconfig")

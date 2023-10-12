@@ -58,6 +58,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	end,
 })
 vim.g.loaded_netrw = 1
+vim.cmd[[colorscheme synthwave84]] 
+
 vim.g.loaded_netrwPlugin = 1
 --
 -- vim.diagnostic.config({

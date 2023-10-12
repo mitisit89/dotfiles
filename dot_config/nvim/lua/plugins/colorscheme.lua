@@ -1,8 +1,14 @@
+-- return {
+-- 	"folke/tokyonight.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	opts = {
+-- 		style = "moon",
+-- 	},
+-- }
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {
-		style = "moon",
-	},
+     
+"lunarvim/synthwave84.nvim",
+    
+    opts={}
 }
