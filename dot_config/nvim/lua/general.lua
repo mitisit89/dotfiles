@@ -69,7 +69,7 @@ vim.g.loaded_netrwPlugin = 1
 -- 	update_in_insert = false,
 -- 	severity_sort = false,
 -- })
-vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[colorscheme tokyonight]])
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },
 	{ name = "DiagnosticSignWarn", text = "" },
