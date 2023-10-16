@@ -75,7 +75,6 @@ return {
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
-		
 
 			formatting = {
 				-- default fields order i.e completion word + item.kind + item.kind icons
@@ -109,7 +108,17 @@ return {
 					winhighlight = "Normal:CmpDoc",
 				},
 			},
-
+			sorting = {
+				comparators = {
+					cmp.config.compare.offset,
+					cmp.config.compare.exact,
+					cmp.config.compare.score,
+					cmp.config.compare.kind,
+					-- cmp.config.compare.sort_text,
+					cmp.config.compare.length,
+					cmp.config.compare.order,
+				},
+			},
 			mapping = {
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
@@ -146,7 +155,6 @@ return {
 				{ name = "async_path" },
 				{ name = "buffer" },
 			},
-		}
-)
+		})
 	end,
 }
