@@ -14,18 +14,7 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
-	pylsp = {
-		settings = {
-			pylsp = {
-				plugins = {
-					pycodestyle = {
-						ignore = { "W391" },
-						maxLineLength = 100,
-					},
-				},
-			},
-		},
-	},
+
 	lua_ls = {
 		Lua = {
 			diagnostics = {
@@ -41,10 +30,18 @@ local servers = {
 	gopls = {
 		staticcheck = true,
 	},
+	pyright = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true,
+			},
+		},
+	},
 	yamlls = {},
 	dockerls = {},
 	tsserver = { hostInfo = "neovim" },
-	marksman = {},
 }
 
 local mason_lspconfig = require("mason-lspconfig")
