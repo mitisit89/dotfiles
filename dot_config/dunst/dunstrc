@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.hostname "debian"}}
+
 #----------------------------------------------------------------------------------
 # NOTE: The notifications set here are strictly shaped for a 1920x1080 display.
 #
@@ -44,8 +44,9 @@
   enable_recursive_icon_lookup = true  
   frame_color = "#11111B"
   separator_color= frame
-  timeout = 6
+  timeout = 4
   idle_threshold=11
+  override_dbus_timeout=4
   min_icon_size=32
   max_icon_size = 32
 
@@ -61,4 +62,4 @@ foreground = "#CDD6F4"
 background = "#11111B"
 foreground = "#CDD6F4"
 frame_color = "#FAB387"
-{{end}}
+
