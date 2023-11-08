@@ -79,9 +79,11 @@ format = 'via [$symbol$stack]($style)'
 [purescript]
 format = 'via [$symbol]($style)'
 
-[python]
-format = 'via [$symbol]($style)'
-
+# [python]
+# format = 'via [$symbol]($style)'
+# pyenv_version_name = true
+#
+# python_binary = './venv/bin/python', 'python', 'python3'
 [raku]
 format = 'via [$symbol]($style)'
 
