@@ -8,7 +8,6 @@ return {
 	"williamboman/mason-lspconfig.nvim", -- Optional
 	-- Snippets
 	"rafamadriz/friendly-snippets", -- Optional
-	"ThePrimeagen/harpoon",
 	"nvimdev/guard.nvim",
 	"folke/todo-comments.nvim",
 	"nvimdev/guard-collection",

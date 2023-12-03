@@ -53,7 +53,6 @@ return require("packer").startup({
 			"akinsho/toggleterm.nvim",
 			"lewis6991/gitsigns.nvim",
 			"numToStr/Comment.nvim",
-			"ThePrimeagen/harpoon",
 			"folke/trouble.nvim",
 			"glepnir/dashboard-nvim",
 			"nvimdev/guard.nvim",
