@@ -37,7 +37,6 @@ return require("packer").startup({
 			"neovim/nvim-lspconfig", -- Required
 			"williamboman/mason.nvim", -- Optional
 			"williamboman/mason-lspconfig.nvim", -- Optional
-			"ray-x/lsp_signature.nvim",
 			-- Autocompletion
 			"hrsh7th/nvim-cmp", -- Required
 			"hrsh7th/cmp-nvim-lsp", -- Required
@@ -53,10 +52,8 @@ return require("packer").startup({
 			"akinsho/toggleterm.nvim",
 			"lewis6991/gitsigns.nvim",
 			"numToStr/Comment.nvim",
-			"folke/trouble.nvim",
 			"glepnir/dashboard-nvim",
 			"nvimdev/guard.nvim",
-			"folke/todo-comments.nvim",
 		})
 
 		if packer_bootstrap then
