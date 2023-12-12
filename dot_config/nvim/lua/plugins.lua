@@ -37,6 +37,7 @@ return require("packer").startup({
 			"neovim/nvim-lspconfig", -- Required
 			"williamboman/mason.nvim", -- Optional
 			"williamboman/mason-lspconfig.nvim", -- Optional
+			"ray-x/lsp_signature.nvim",
 			-- Autocompletion
 			"hrsh7th/nvim-cmp", -- Required
 			"hrsh7th/cmp-nvim-lsp", -- Required
