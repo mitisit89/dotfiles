@@ -28,6 +28,11 @@ local servers = {
 		filetypes = { "sh", "zsh", "bash" },
 	},
 	gopls = {
+		experimentalPostfixCompletions = true,
+		analyses = {
+			unusedparams = true,
+			shadow = true,
+		},
 		staticcheck = true,
 	},
 	pyright = {

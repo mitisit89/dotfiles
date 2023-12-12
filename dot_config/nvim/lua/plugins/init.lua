@@ -9,6 +9,5 @@ return {
 	-- Snippets
 	"rafamadriz/friendly-snippets", -- Optional
 	"nvimdev/guard.nvim",
-	"folke/todo-comments.nvim",
 	"nvimdev/guard-collection",
 }
