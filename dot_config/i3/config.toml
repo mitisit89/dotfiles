@@ -31,6 +31,11 @@ block = "cpu"
 interval = 1
 
 [[block]]
+block = "temperature"
+format = "$icon $max"
+interval = 1
+chip = "k10temp-pci-00c3"
+[[block]]
 block = "sound"
 max_vol=100
 

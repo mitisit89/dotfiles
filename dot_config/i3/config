@@ -204,7 +204,7 @@ client.focused      $tokio_accent    $tokio_accent     $black    $tokio_accent $
 client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
 client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
         # bar settings #
-############################################
+###########################################
 bar {
    font pango:FiraCode NerdFont Mono 12
     position top
