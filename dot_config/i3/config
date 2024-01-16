@@ -102,7 +102,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f exec Thunar
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -208,7 +208,7 @@ client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 bar {
    font pango:FiraCode NerdFont Mono 12
     position top
-    status_command $HOME/.local/share/cargo/bin/i3status-rs $HOME/.config/i3/config.toml
+    status_command $HOME/.nix-profile/bin/i3status-rs $HOME/.config/i3/config.toml
     strip_workspace_numbers yes
   workspace_min_width 30
     colors {
