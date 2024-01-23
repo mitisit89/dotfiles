@@ -20,7 +20,9 @@ map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
-map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
+map("n", "<leader>tt", function()
+	require("trouble").toggle("workspace_diagnostics")
+end, opts)
 
 map("n", "<leader>a", function()
 	harpoon:list():append()
