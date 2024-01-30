@@ -15,7 +15,7 @@ map("n", "<leader>fs", builtin.current_buffer_fuzzy_find, { desc = "current_buff
 map("n", "<leader>fb", builtin.buffers, { desc = "find_buffers" }, opts)
 map("n", "<leader>ld", builtin.lsp_definitions, { desc = "lsp_definitions" }, opts)
 map("n", "<leader>lr", builtin.lsp_references, { desc = "find_buffers" }, opts)
-
+map("n", "<Leader>sv", "<C-w>v", { desc = "open split vertically" })
 map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)

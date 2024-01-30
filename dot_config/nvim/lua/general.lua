@@ -40,7 +40,7 @@ local opts = {
 	spelllang = "en_us",
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-	timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
+	-- timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
 
 for key, value in pairs(opts) do
@@ -56,18 +56,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.relativenumber = false
 	end,
 })
-vim.g.loaded_netrw = 1
--- vim.cmd[[colorscheme synthwave84]] 
+
+-- vim.g.loaded_netrw = 1
+-- vim.cmd[[colorscheme synthwave84]]
 
 vim.g.loaded_netrwPlugin = 1
---
--- vim.diagnostic.config({
--- 	virtual_text = false,
--- 	signs = true,
--- 	underline = true,
--- 	update_in_insert = false,
--- 	severity_sort = false,
--- })
 vim.cmd([[colorscheme tokyonight]])
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },

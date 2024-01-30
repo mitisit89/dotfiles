@@ -38,9 +38,10 @@ local function border(hl_name)
 		{ "│", hl_name },
 	}
 end
-
 return {
 	"hrsh7th/nvim-cmp",
+	version = false, -- last release is way too old
+	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
@@ -55,6 +56,7 @@ return {
 	opts = function()
 		local luasnip = require("luasnip")
 		local cmp = require("cmp")
+		local defaults = require("cmp.config.default")()
 
 		local cmp_ui = {
 			icons = true,
@@ -96,6 +98,7 @@ return {
 					return item
 				end,
 			},
+			sorting = defaults.sorting,
 			window = {
 				completion = {
 					side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
@@ -108,17 +111,7 @@ return {
 					winhighlight = "Normal:CmpDoc",
 				},
 			},
-			-- sorting = {
-			-- 	comparators = {
-			-- 		cmp.config.compare.offset,
-			-- 		cmp.config.compare.exact,
-			-- 		cmp.config.compare.score,
-			-- 		cmp.config.compare.kind,
-			-- 		-- cmp.config.compare.sort_text,
-			-- 		cmp.config.compare.length,
-			-- 		cmp.config.compare.order,
-			-- 	},
-			-- },
+
 			mapping = {
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),

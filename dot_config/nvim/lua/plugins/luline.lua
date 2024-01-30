@@ -3,5 +3,6 @@ return {
 	event = "VeryLazy",
 	opts = {
 		theme = "auto",
+		globalstatus = true,
 	},
 }
