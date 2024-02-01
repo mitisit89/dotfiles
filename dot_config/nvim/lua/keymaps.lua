@@ -2,7 +2,6 @@ local map = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
-local harpoon = require("harpoon")
 map("n", "<leader>e", ":Neotree toggle<CR>", opts)
 map("n", "<C-b>", ":Neotree focus<CR>", opts)
 -- map("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
@@ -23,10 +22,3 @@ map("v", ">", ">gv", opts)
 map("n", "<leader>tt", function()
 	require("trouble").toggle("workspace_diagnostics")
 end, opts)
-
-map("n", "<leader>a", function()
-	harpoon:list():append()
-end)
-map("n", "<leader>l", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
