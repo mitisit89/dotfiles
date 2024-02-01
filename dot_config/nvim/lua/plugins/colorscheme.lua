@@ -3,12 +3,6 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		style = "moon",
+		style = "night",
 	},
 }
--- return {
---
--- "lunarvim/synthwave84.nvim",
---
---     opts={}
--- }

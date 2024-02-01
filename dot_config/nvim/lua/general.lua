@@ -39,7 +39,6 @@ local opts = {
 	spell = true,
 	spelllang = "en_us",
 	scrolloff = 8, -- is one of my fav
-	completion_sorting = "none",
 	sidescrolloff = 8,
 	-- timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
@@ -61,6 +60,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- vim.g.loaded_netrw = 1
 -- vim.cmd[[colorscheme synthwave84]]
 
+vim.g.completion_sorting = "none"
 vim.g.loaded_netrwPlugin = 1
 vim.cmd([[colorscheme tokyonight]])
 local signs = {
