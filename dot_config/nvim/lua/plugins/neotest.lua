@@ -10,9 +10,10 @@ return {
 		require("neotest").setup({
 			adapters = {
 				require("neotest-python")({
+					env = { DJANGO_SETTINGS_MODULE = "Redadm.settings" },
 					dap = { justMyCode = false },
-					args = { "--log-level", "DEBUG" },
-					runner = "django",
+					runner = "DjangoUnittestRunner",
+					python = ".venv/bin/python",
 				}),
 			},
 		})
