@@ -63,6 +63,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ "$TMUX" = "" ]; then tmux; fi
 eval "$(starship init zsh)"
 
 # fnm
