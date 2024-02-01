@@ -61,7 +61,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- vim.cmd[[colorscheme synthwave84]]
 
 vim.g.completion_sorting = "none"
-vim.g.loaded_netrwPlugin = 1
 vim.cmd([[colorscheme tokyonight]])
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },

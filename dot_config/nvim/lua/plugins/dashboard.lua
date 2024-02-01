@@ -5,11 +5,6 @@ return {
 		require("dashboard").setup({
 			theme = "hyper",
 			change_to_vcs_root = true,
-			config = {
-				project = {
-					enable = true,
-				},
-			},
 		})
 	end,
 
