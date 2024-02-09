@@ -1,7 +1,4 @@
 return {
-	-- Packer can manaffe itself
-	"sindrets/diffview.nvim",
-	--	"romgrk/barbar.nvim",
 	-- LSP Support
 	"neovim/nvim-lspconfig", -- Required
 	"williamboman/mason.nvim", -- Optional
