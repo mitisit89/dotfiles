@@ -20,5 +20,5 @@ map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
 map("n", "<leader>tt", function()
-	require("trouble").toggle("workspace_diagnostics")
+	require("trouble").toggle("document_diagnostics")
 end, opts)
