@@ -61,7 +61,7 @@ bindsym $mod+Shift+0    move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+c kill
 
