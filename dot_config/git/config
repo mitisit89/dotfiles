@@ -6,6 +6,7 @@
 
 [delta]
     features = decorations
+    side-by-side = true
     true-color = always
 
 [delta "interactive"]
@@ -24,3 +25,4 @@
 [user]
     email=29955395+mitisit89@users.noreply.github.com 
     name=mitisit
+    
