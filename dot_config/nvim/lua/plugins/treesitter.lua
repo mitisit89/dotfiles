@@ -7,7 +7,7 @@ return {
 
 		configs.setup({
 			ensure_installed = { "c", "lua", "python", "bash", "go", "json", "yaml", "toml", "gitignore", "gitcommit" },
-			sync_install = true,
+			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
 		})
