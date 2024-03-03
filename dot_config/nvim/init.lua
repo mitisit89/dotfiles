@@ -12,4 +12,3 @@ require("lazy").setup({ spec = "plugins", change_detection = { notify = false } 
 require("keymaps")
 require("general")
 require("lsp")
-require("formatters")

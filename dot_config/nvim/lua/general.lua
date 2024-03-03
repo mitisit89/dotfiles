@@ -40,6 +40,9 @@ local opts = {
 	spelllang = "en_us",
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
+	list = true,
+	listchars = { tab = "» ", trail = "·", nbsp = "␣" },
+	inccommand = "split",
 	-- timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
 
