@@ -10,6 +10,7 @@ return {
 			lua = { "stylua" },
 			python = { "ruff_format" },
 			go = { "goimports", "gofmt" },
+			["*"] = { "codespell" },
 		},
 	},
 }
