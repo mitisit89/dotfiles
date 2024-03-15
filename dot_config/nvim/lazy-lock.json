@@ -10,6 +10,7 @@
   "codeium.vim": { "branch": "main", "commit": "5b8f68d5c0e32ae97d073a56ff14dba5646ec223" },
   "conform.nvim": { "branch": "master", "commit": "5a15cc46e75cad804fd51ec5af9227aeb1d1bdaa" },
   "dashboard-nvim": { "branch": "master", "commit": "413442b12d85315fc626c44a0ce4929b213ef604" },
+  "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "friendly-snippets": { "branch": "main", "commit": "dcd4a586439a1c81357d5b9d26319ae218cc9479" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },
   "harpoon": { "branch": "harpoon2", "commit": "a38be6e0dd4c6db66997deab71fc4453ace97f9c" },
@@ -34,6 +35,5 @@
   "todo-comments.nvim": { "branch": "main", "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb" },
   "toggleterm.nvim": { "branch": "main", "commit": "193786e0371e3286d3bc9aa0079da1cd41beaa62" },
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
-  "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
-  "vim-fugitive": { "branch": "master", "commit": "41beedabc7e948c787ea5696e04c3544c3674e23" }
+  "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" }
 }
