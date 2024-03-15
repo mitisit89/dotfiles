@@ -37,11 +37,12 @@ return {
 				},
 				staticcheck = true,
 			},
-			pylsp = {
-				plugins = {
-					pycodestyle = {
-						ignore = { "W391" },
-						maxLineLength = 100,
+			pyright = {
+				python = {
+					analysis = {
+						autoSearchPaths = true,
+						diagnosticMode = "openFilesOnly",
+						useLibraryCodeForTypes = true,
 					},
 				},
 			},
