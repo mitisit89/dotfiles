@@ -1,7 +1,6 @@
 # Created by newuser for 5.9
 # source ~/.zprofile
 HISTSIZE=10000000
-SAVEHIST=10000000
 setopt autocd
 setopt interactive_comments
 setopt extendedglob
@@ -64,9 +63,9 @@ export PROMPT_COMMAND="history -a; history -n"
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"
+eval "$(fnm env)"
