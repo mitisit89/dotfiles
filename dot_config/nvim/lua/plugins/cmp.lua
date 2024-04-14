@@ -26,18 +26,6 @@ local symbol_map = {
 	TypeParameter = "",
 }
 
-local function border(hl_name)
-	return {
-		{ "╭", hl_name },
-		{ "─", hl_name },
-		{ "╮", hl_name },
-		{ "│", hl_name },
-		{ "╯", hl_name },
-		{ "─", hl_name },
-		{ "╰", hl_name },
-		{ "│", hl_name },
-	}
-end
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old
@@ -100,16 +88,8 @@ return {
 			},
 			sorting = defaults.sorting,
 			window = {
-				completion = {
-					side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
-					winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
-					scrollbar = false,
-					border = border("CmpBorder"),
-				},
-				documentation = {
-					border = border("CmpDocBorder"),
-					winhighlight = "Normal:CmpDoc",
-				},
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
 			},
 
 			mapping = {

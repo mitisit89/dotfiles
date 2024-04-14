@@ -56,6 +56,7 @@ return {
 			"stylua", -- Used to format lua code
 			"ruff",
 			"goimports",
+			"cspell",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 		require("mason-lspconfig").setup({
