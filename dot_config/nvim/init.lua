@@ -11,3 +11,5 @@ vim.g.mapleader = " "
 require("lazy").setup({ spec = "plugins", change_detection = { notify = false } })
 require("keymaps")
 require("general")
+
+pcall(require("telescope").load_extension, "fzf")

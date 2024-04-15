@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	end,
 })
 
-vim.g.completion_sorting = "none"
+-- vim.g.completion_sorting = "none"
 vim.cmd([[colorscheme tokyonight]])
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },
