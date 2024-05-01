@@ -11,19 +11,21 @@ return {
 		local servers = {
 
 			lua_ls = {
-				Lua = {
-					runtime = {
-						version = "LuaJIT",
+				settings = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						library = {
+							"${3rd}/luv/library",
+							table.unpack(vim.api.nvim_get_runtime_file("", true)),
+						},
+						diagnostics = {
+							globals = { "vim" },
+						},
+						workspace = { checkThirdParty = false },
+						telemetry = { enable = false },
 					},
-					library = {
-						"${3rd}/luv/library",
-						unpack(vim.api.nvim_get_runtime_file("", true)),
-					},
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = { checkThirdParty = false },
-					telemetry = { enable = false },
 				},
 			},
 			bashls = {
