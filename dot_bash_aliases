@@ -7,12 +7,12 @@ alias dnf='sudo dnf'
 alias cal='ncal -M -b'
 #Make directory & enter it
 mkcd() {
-	mkdir -p $1
-	"cd $1||exit"
+	mkdir -p "$1"
+	cd "$1" || exit
 }
 
 wttr() {
-	curl https://wttr.in/"$1"?lang=ru
+	curl https://wttr.in/"$1"?lang=pl
 }
 alias glog="git log --oneline --graph --color --all --decorate"
 alias reset-vpn="nmcli connection down wg3  && nmcli connection up wg3"
