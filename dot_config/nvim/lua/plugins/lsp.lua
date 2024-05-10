@@ -38,6 +38,13 @@ return {
 					shadow = true,
 				},
 				staticcheck = true,
+				capabilities = {
+					workspace = {
+						didChangeWatchedFiles = {
+							dynamicRegistration = true,
+						},
+					},
+				},
 			},
 			pyright = {
 				python = {
@@ -45,6 +52,13 @@ return {
 						autoSearchPaths = true,
 						diagnosticMode = "openFilesOnly",
 						useLibraryCodeForTypes = true,
+					},
+				},
+				capabilities = {
+					workspace = {
+						didChangeWatchedFiles = {
+							dynamicRegistration = true,
+						},
 					},
 				},
 			},

@@ -75,23 +75,23 @@ end
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
-local config = {
-	virtual_text = false,
-	signs = {
-		active = signs, -- show signs
-	},
-	update_in_insert = false,
-	underline = true,
-	severity_sort = true,
-	float = {
-		focusable = true,
-		style = "minimal",
-		border = "single",
-		source = "always",
-		header = "Diagnostic",
-		prefix = "",
-	},
-}
+-- local config = {
+-- 	virtual_text = false,
+-- 	signs = {
+-- 		active = signs, -- show signs
+-- 	},
+-- 	update_in_insert = false,
+-- 	underline = true,
+-- 	severity_sort = true,
+-- 	float = {
+-- 		focusable = true,
+-- 		style = "minimal",
+-- 		border = "single",
+-- 		source = "always",
+-- 		header = "Diagnostic",
+-- 		prefix = "",
+-- 	},
+-- }
 vim.diagnostic.config(config)
 vim.api.nvim_create_autocmd("CursorHold", {
 	buffer = bufnr,
