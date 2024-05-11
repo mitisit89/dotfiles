@@ -7,4 +7,5 @@ return {
 	use_fancy_tab_bar = false,
 	freetype_load_target = "HorizontalLcd",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+	cursor_blink_rate = 0,
 }
