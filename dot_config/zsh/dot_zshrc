@@ -11,7 +11,7 @@ autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 export HISTFILE="${XDG_STATE_HOME}"/zsh/history
 zmodload zsh/complist
 compinit
@@ -29,19 +29,10 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-function fh() {
-  local cmd=$(fc -l 0 | tac | fzf --reverse | sed 's/ *[0-9]* *//')
-  if [ -n "$cmd" ]; then
-    echo "$cmd"
-    eval "$cmd"
-  fi
-}
 
 
 
 transfer(){ if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;}
-zle -N fh
-bindkey '^R' fh
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
@@ -63,9 +54,11 @@ export PROMPT_COMMAND="history -a; history -n"
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] ; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 eval "$(starship init zsh)"
 
-# fnm
-export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env)"
+eval "$(fzf --zsh)"
