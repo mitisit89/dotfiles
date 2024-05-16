@@ -1,5 +1,5 @@
 alias py='python3'
-alias gs='git status '
+alias gs='git status -s '
 alias ga='git add '
 alias gcm='git commit -m'
 alias gb='git branch'
