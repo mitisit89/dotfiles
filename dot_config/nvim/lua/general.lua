@@ -39,6 +39,7 @@ local opts = {
 	spell = true,
 	spelllang = "en_us",
 	scrolloff = 8, -- is one of my fav
+	smoothscroll = true,
 	sidescrolloff = 8,
 	list = true,
 	listchars = { tab = "» ", trail = "·", nbsp = "␣" },
@@ -107,4 +108,4 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		vim.diagnostic.open_float(nil, opt)
 	end,
 })
-vim.cmd([[ highlight  gitsignscurrentlineblame guibg=#191724 guifg=#ffffff]])
+-- vim.cmd([[ highlight  gitsignscurrentlineblame guibg=#191724 guifg=#ffffff]])

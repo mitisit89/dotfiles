@@ -46,7 +46,7 @@ return {
 					},
 				},
 			},
-			pyright = {
+			basedpyright = {
 				python = {
 					analysis = {
 						autoSearchPaths = true,
@@ -65,6 +65,7 @@ return {
 			yamlls = {},
 			dockerls = {},
 			tsserver = { hostInfo = "neovim" },
+			zls = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
