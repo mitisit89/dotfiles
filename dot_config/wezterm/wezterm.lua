@@ -9,4 +9,5 @@ return {
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 	cursor_blink_rate = 0,
 	audible_bell = "Disabled",
+	window_close_confirmation = "NeverPrompt",
 }
