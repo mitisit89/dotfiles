@@ -64,6 +64,7 @@ return {
 			},
 			yamlls = {},
 			dockerls = {},
+			jsonls = {},
 			tsserver = { hostInfo = "neovim" },
 			zls = {},
 		}
