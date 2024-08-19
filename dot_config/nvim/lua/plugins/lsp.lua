@@ -76,6 +76,14 @@ return {
 			"goimports",
 			"cspell",
 			"shfmt",
+			"golangci-lint",
+			"golangci-lint-langserver",
+			"gopls",
+			"pyright",
+			"yamlls",
+			"dockerls",
+			"jsonls",
+			"zls",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 		require("mason-lspconfig").setup({
