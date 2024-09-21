@@ -32,6 +32,7 @@ return {
 				filetypes = { "sh", "zsh", "bash" },
 			},
 			gopls = {
+				buildFlags = { "-tags=integration" },
 				experimentalPostfixCompletions = true,
 				analyses = {
 					unusedparams = true,
@@ -65,8 +66,6 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
-			tsserver = { hostInfo = "neovim" },
-			zls = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -77,13 +76,11 @@ return {
 			"cspell",
 			"shfmt",
 			"golangci-lint",
-			"golangci-lint-langserver",
 			"gopls",
-			"pyright",
 			"yamlls",
+			"basedpyright",
 			"dockerls",
 			"jsonls",
-			"zls",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 		require("mason-lspconfig").setup({
