@@ -10,4 +10,7 @@ return {
 	cursor_blink_rate = 0,
 	audible_bell = "Disabled",
 	window_close_confirmation = "NeverPrompt",
+	keys = {
+		{ key = "w", mods = "CTRL", action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
+	},
 }
