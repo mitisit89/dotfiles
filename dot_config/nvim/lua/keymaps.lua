@@ -1,13 +1,11 @@
 local map = vim.keymap.set
-
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 local gs = require("gitsigns")
-map("n", "<leader>e", ":Neotree toggle<CR>", opts)
+map("n", "<leader>e", ":Neotree toggle position=float<CR>", opts)
 map("n", "<C-b>", ":Neotree focus<CR>", opts)
 -- map("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
 -- map("n", "<leader>n", ":NvimTreeFindFile<CR>", opts)
-
 map("n", "<Leader>ff", builtin.git_files, { desc = "git_files" }, opts)
 map("n", "<leader>gf", builtin.live_grep, { desc = "live_grep" }, opts)
 map("n", "<leader>fb", builtin.buffers, { desc = "find_buffers" }, opts)
