@@ -1,0 +1,6 @@
+default_profile = "base"
+[profiles.base]
+adapter = "sqlite"
+theme = "lightbulb"
+limit = 10000
+keymap_name = ["vscode"]
