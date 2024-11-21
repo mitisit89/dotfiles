@@ -61,7 +61,7 @@ bindsym $mod+Shift+0    move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 # kill focused window
 bindsym $mod+c kill
 
@@ -205,17 +205,7 @@ client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
 client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
         # bar settings #
 ###########################################
-bar {
-   font pango:FiraCode NerdFont Mono 12
-    position top
-    status_command $HOME/.nix-profile/bin/i3status-rs $HOME/.config/i3/config.toml
-    strip_workspace_numbers yes
-  workspace_min_width 30
-    colors {
-         background $tokio_bg
-        statusline $tokio_fg
-        separator $tokio_accent    }
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #####################################
 # Application menu handled by rofi: #
 ###############################
