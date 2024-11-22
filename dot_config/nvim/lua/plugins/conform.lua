@@ -11,8 +11,6 @@ return {
 			python = { "ruff_format" },
 			go = { "goimports", "gofmt" },
 			["sh"] = { "shfmt" },
-
-			["*"] = { "cspell" },
 		},
 	},
 }

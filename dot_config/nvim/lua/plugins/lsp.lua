@@ -66,6 +66,8 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
+			rust_analyzer = {},
+			typos_lsp = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -73,7 +75,6 @@ return {
 			"stylua", -- Used to format lua code
 			"ruff",
 			"goimports",
-			"cspell",
 			"shfmt",
 			"golangci-lint",
 			"gopls",

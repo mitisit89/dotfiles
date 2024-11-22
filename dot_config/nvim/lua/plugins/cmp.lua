@@ -25,7 +25,7 @@ local symbol_map = {
 	Operator = "󰆕",
 	TypeParameter = "",
 }
-
+local helo = "world"
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old

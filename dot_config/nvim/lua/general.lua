@@ -36,13 +36,13 @@ local opts = {
 	numberwidth = 4, -- set number column width to 2 {default 4}
 	signcolumn = "yes", -- always show the sign column otherwise it would shift the text each time
 	wrap = false, -- display lines as one long line
-	spell = true,
 	spelllang = "en_us",
+	spell = true,
 	scrolloff = 8, -- is one of my fav
 	smoothscroll = true,
 	sidescrolloff = 8,
 	list = true,
-	listchars = { tab = "» ", trail = "·", nbsp = "␣" },
+	listchars = "tab:▸ ,trail:·,nbsp:␣,extends:❯,precedes:❮",
 	inccommand = "split",
 	-- timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
