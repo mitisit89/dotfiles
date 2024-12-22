@@ -56,8 +56,10 @@ return {
 			basedpyright = {
 				python = {
 					analysis = {
+						autoImportCompletions = true,
 						autoSearchPaths = true,
-						diagnosticMode = "openFilesOnly",
+						diagnosticMode = "workspace",
+						typeCheckingMode = "basic",
 						useLibraryCodeForTypes = true,
 					},
 				},
@@ -72,7 +74,6 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
-			rust_analyzer = {},
 			typos_lsp = {},
 		}
 		require("mason").setup()
