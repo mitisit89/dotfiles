@@ -80,6 +80,7 @@ if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] ; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 eval "$(starship init zsh)"
-
+{{ if eq .chezmoi.hostname "t480" }}
 eval "$(fnm env)"
+{{ end }}
 eval "$(fzf --zsh)"
