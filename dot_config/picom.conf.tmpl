@@ -8,8 +8,7 @@
 # (windows with '_NET_WM_WINDOW_TYPE_DESKTOP') never get shadow, 
 # unless explicitly requested using the wintypes option.
 #
-# shadow = false
-shadow = true;
+shadow = false
 
 # The blur radius for shadows, in pixels. (defaults to 12)
 # shadow-radius = 12
@@ -194,7 +193,6 @@ blur-kern = "3x3box";
 blur-background-exclude = [
   "window_type = 'dock'",
   "window_type = 'desktop'",
-  "_GTK_FRAME_EXTENTS@:c"
 ];
 
 #################################
@@ -212,7 +210,7 @@ backend = "xrender";
 
 # Enable/disable VSync.
 # vsync = false
-#vsync = true;
+vsync = true;
 
 # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
 # dbus = false
