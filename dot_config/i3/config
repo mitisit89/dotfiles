@@ -22,13 +22,13 @@ workspace_layout default
 ##############################
 
 #border indicator on windows: 
-new_window pixel 3
+default_border pixel 3
 
 # Set inner/outer gaps
 gaps inner 6
 gaps outer 3
 smart_gaps on
-smart_borders on
+hide_edge_borders  vertical
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -166,8 +166,8 @@ for_window [class="Alacritty"] focus
 #############################################
 
 #get auth work with polkit-gnome
-exec --no-startup-id lxpolkit
-# exec setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:alt_space_toggle'
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:win_space_toggle'
 # dex execute .desktop files
 # keep in mind that it can cause issues 
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
@@ -206,7 +206,7 @@ client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
         # bar settings #
 ###########################################
 bar {
-font pango:FiraCode NerdFont Mono 12
+font pango:FiraCode Nerd Font Mono ,FontAwesome 12
     position top
     status_command i3status-rs ~/.config/i3/config.toml
  strip_workspace_numbers yes
