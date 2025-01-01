@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-	font = wezterm.font("Hack Nerd Font"),
+	font = wezterm.font("JetBrainsMono NFM"),
 	font_size = 14,
 	color_scheme = "Tokyo Night",
 	use_fancy_tab_bar = false,
