@@ -16,6 +16,7 @@ wttr() {
 }
 alias glog="git log --oneline --graph --color --all --decorate"
 alias lg='lazygit'
+alias yz='yazi'
 alias uptime="uptime -p"
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
