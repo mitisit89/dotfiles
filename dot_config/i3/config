@@ -22,13 +22,13 @@ workspace_layout default
 ##############################
 
 #border indicator on windows: 
-default_border pixel 3
+default_border pixel 4
 
 # Set inner/outer gaps
 gaps inner 6
 gaps outer 3
 smart_gaps on
-hide_edge_borders  vertical
+hide_edge_borders  smart
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -151,7 +151,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 # bind program to workspace and focus to them on startup:
-assign [class="firefox"] $ws2
+assign [class="floorp"] $ws2
+assign [class="Chromium"] $ws2
 assign [class="Thunar"] $ws4
 assign [class="TelegramDesktop"] $ws3
 assign [class="discord"] $ws3
@@ -164,7 +165,7 @@ for_window [class="Alacritty"] focus
 #############################################
 # autostart applications/services on login: #
 #############################################
-
+exec_always autotiling -w 1 3 5 7 9
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:win_space_toggle'
