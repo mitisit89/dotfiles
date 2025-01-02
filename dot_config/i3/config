@@ -61,7 +61,7 @@ bindsym $mod+Shift+0    move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+c kill
 
@@ -207,7 +207,7 @@ client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
         # bar settings #
 ###########################################
 bar {
-font pango:FiraCode Nerd Font Mono ,FontAwesome 12
+font pango:FiraCode Nerd Font 12
     position top
     status_command i3status-rs ~/.config/i3/config.toml
  strip_workspace_numbers yes
