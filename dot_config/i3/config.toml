@@ -3,6 +3,12 @@
 
 [icons]
 icons = "material-nf"
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+player = "spotify"
+
 [[block]]
 block = "time"
 interval = 1
