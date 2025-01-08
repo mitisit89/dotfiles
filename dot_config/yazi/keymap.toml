@@ -1,5 +1,5 @@
 [[manager.prepend_keymap]]
-on   = "!"
+on   = "q"
 run  = 'shell "$SHELL" --block --confirm'
 desc = "Open shell here"
 [[input.prepend_keymap]]

@@ -1,3 +1,4 @@
+require("full-border"):setup()
 return {
 	entry = function()
 		local h = cx.active.current.hovered
