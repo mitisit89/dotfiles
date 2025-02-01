@@ -90,7 +90,7 @@ return {
 			"dockerls",
 			"jsonls",
 		})
-		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+		require("mason-tool-installer").setup({ ensure_installed = ensure_installed, auto_update = true })
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
