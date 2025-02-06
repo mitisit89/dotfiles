@@ -184,7 +184,7 @@ exec --no-startup-id nitrogen --restore
 
 # Autostart apps as you like
 # set floating (nontiling)for apps needing it
-for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Qalculate!" instance="qalculate-gtk"] floating enable
 #set floating (nontiling) for special apps
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
