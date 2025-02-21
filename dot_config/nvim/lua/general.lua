@@ -42,7 +42,6 @@ local opts = {
 	smoothscroll = true,
 	sidescrolloff = 8,
 	list = true,
-	listchars = "tab:▸ ,trail:·,nbsp:␣,extends:❯,precedes:❮",
 	inccommand = "split",
 	-- timeoutlen = 850, -- time to wait for a mapped sequence to complete (in milliseconds) useful for mech keyboard
 }
