@@ -5,6 +5,6 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		indent = { enabled = true },
+		indent = { enabled = true, animate = { enabled = false } },
 	},
 }
