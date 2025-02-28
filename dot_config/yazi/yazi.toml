@@ -1,4 +1,4 @@
 [flavor]
 use = "tokyo-night"
-[manager]
-show_hidden=true
+# [manager]
+# show_hidden=true
