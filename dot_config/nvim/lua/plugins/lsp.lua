@@ -43,6 +43,7 @@ return {
 				analyses = {
 					unusedparams = true,
 					shadow = true,
+					modernize = true,
 				},
 				staticcheck = true,
 				capabilities = {
