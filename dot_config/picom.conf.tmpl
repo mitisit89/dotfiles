@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.osRelease.id "arch" or eq .chezmoi.osRelease.id "fedora" }}
+{{ if or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "fedora") }}
 #################################
 #             Shadows           #
 #################################
