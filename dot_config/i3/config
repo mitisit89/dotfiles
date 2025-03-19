@@ -165,15 +165,15 @@ for_window [class="Alacritty"] focus
 #############################################
 # autostart applications/services on login: #
 #############################################
-exec_always autotiling -w 1 3 5 7 9
+# exec_always autotiling -w 1 3 5 7 9
 #get auth work with polkit-gnome
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:win_space_toggle'
+exec --no-startup-id /usr/libexec/xfce-polkit
+# exec --no-startup-id setxkbmap -model pc104 -layout 'pl,ru' -variant , -option 'grp:win_space_toggle'
 # dex execute .desktop files
 # keep in mind that it can cause issues 
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
 # in this cases better disable dex and use manual starting apps using xdg/autostart
-exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+exec --no-startup-id dex-autostart -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id picom -b
 #redshift
 exec --no-startup-id redshift-gtk
