@@ -4,7 +4,7 @@ alias ga='git add '
 alias gcm='git commit -m'
 alias gb='git branch'
 alias dnf='sudo dnf'
-{{ if eq .chezmoi.hostname "t480" }}
+{{ if (or(eq .chezmoi.hostname "t480") (eq .chezmoi.os "debian")) }}
 alias cal='ncal -M -b'
 {{ end }}
 #Make directory & enter it
