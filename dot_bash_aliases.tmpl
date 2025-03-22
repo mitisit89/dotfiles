@@ -24,7 +24,7 @@ alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias df='df -h'
 alias ls='ls --color=auto'
-{{ if eq .chezmoi.hostname "t480" }}
+{{ if eq .chezmoi.osRelease.id "debian" }}
 alias dim_off="xset s off;xset s noblank;xset -dpms"
 {{ end }}
 alias update_term="sudo update-alternatives --config x-terminal-emulatory"
