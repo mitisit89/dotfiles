@@ -21,3 +21,8 @@ exact = true
 stripComponents = 1
 format='zip'
 refreshPeriod = "168h"
+[".local/share/fonts/JetBrainsMono"]
+type='archive'
+url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip'
+format='zip'
+exclude=["*.md"]
