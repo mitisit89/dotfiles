@@ -19,8 +19,8 @@ export HISTFILE="${XDG_STATE_HOME}"/zsh/history
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$XDG_STATE_HOME"/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "$XDG_STATE_HOME"/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.bash_aliases  
 # vi mode
 bindkey -v
@@ -32,28 +32,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-spf() {
-    os=$(uname -s)
-
-    # Linux
-    if [[ "$os" == "Linux" ]]; then
-        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
-    fi
-
-    # macOS
-    if [[ "$os" == "Darwin" ]]; then
-        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
-    fi
-
-    command spf "$@"
-
-    [ ! -f "$SPF_LAST_DIR" ] || {
-        . "$SPF_LAST_DIR"
-        rm -f -- "$SPF_LAST_DIR" > /dev/null
-    }
-}
-
-
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
