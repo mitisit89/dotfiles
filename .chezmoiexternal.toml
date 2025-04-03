@@ -14,13 +14,23 @@ type='archive'
 url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip'
 format='zip'
 exclude=["*.md"]
-[".config/zsh/fast-syntax-highlighting"]
+
+[".local/share/fast-syntax-highlighting"]
 type = "archive"
 url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/refs/heads/master.zip"
 exact = true
 stripComponents = 1
 format='zip'
 refreshPeriod = "168h"
+
+[".local/share/zsh-autosuggestions"]
+type = "archive"
+url = "https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+format='zip'
+refreshPeriod = "168h"
+
 [".local/share/fonts/JetBrainsMono"]
 type='archive'
 url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip'
