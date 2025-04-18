@@ -59,27 +59,32 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.relativenumber = false
 	end,
 })
-
 -- vim.g.completion_sorting = "none"
 vim.cmd([[colorscheme tokyonight]])
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
+local diagnostic = {
+	[vim.diagnostic.severity.ERROR] = { name = "ERROR", text = "󰅙", hl = "DiagnosticSignError" },
+	[vim.diagnostic.severity.WARN] = { name = "WARN", text = "", hl = "DiagnosticSignWarn" },
+	[vim.diagnostic.severity.HINT] = { name = "HINT", text = "", hl = "DiagnosticSignHint" },
+	[vim.diagnostic.severity.INFO] = { name = "INFO", text = "󰋼", hl = "DiagnosticSignInfo" },
 }
-
-for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+local signs = {
+	text = {},
+	linehl = {},
+	numhl = {},
+}
+local severity = vim.diagnostic.severity
+for _, level in pairs(diagnostic) do
+	signs.text[severity[level.name]] = level.text
+	signs.linehl[severity[level.name]] = ""
+	signs.numhl[severity[level.name]] = level.hl
 end
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 local config = {
 	virtual_text = false,
-	signs = {
-		active = signs, -- show signs
-	},
+	signs = signs, -- show signs
+
 	update_in_insert = false,
 	underline = false,
 	severity_sort = true,
@@ -93,6 +98,7 @@ local config = {
 	},
 }
 vim.diagnostic.config(config)
+--
 vim.api.nvim_create_autocmd("CursorHold", {
 	buffer = bufnr,
 	callback = function()
