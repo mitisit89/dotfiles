@@ -14,7 +14,10 @@ return {
 
 			require("dapui").setup()
 			require("dap-go").setup()
-			require("dap-python").setup(vim.g.python_host_prog)
+			local python_path = table
+				.concat({ vim.fn.stdpath("data"), "mason", "packages", "debugpy", "venv", "bin", "python" }, "/")
+				:gsub("//+", "/")
+			require("dap-python").setup(python_path)
 
 			require("nvim-dap-virtual-text").setup({
 				-- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
@@ -33,11 +36,11 @@ return {
 				end,
 			})
 			-- install only via pip
-			dap.adapters.python = {
-				type = "executable",
-				command = "python3",
-				args = { "-m", "debugpy.adapter" },
-			}
+			-- dap.adapters.python = {
+			-- 	type = "executable",
+			-- 	command = "python3",
+			-- 	args = { "-m", "debugpy.adapter" },
+			-- }
 			-- Handled by nvim-dap-go
 			dap.adapters.go = {
 				type = "server",
