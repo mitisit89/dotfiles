@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
-	font = wezterm.font("JetBrainsMono NFM"),
-	font_size = 14,
+	font = wezterm.font("Iosevka Nerd Font Mono"),
+	font_size = 16,
 	color_scheme = "Tokyo Night",
 	use_fancy_tab_bar = false,
 	freetype_load_target = "HorizontalLcd",
