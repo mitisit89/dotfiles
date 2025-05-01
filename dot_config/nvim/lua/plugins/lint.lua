@@ -10,7 +10,8 @@ return {
 		lint.linters_by_ft = {
 			python = { "ruff" },
 			sh = { "shellcheck" },
-			go = { "golangcilint" },
+			go = { "revive" },
+			docker = { "hadolint" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 

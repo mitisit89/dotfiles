@@ -7,7 +7,7 @@ return {
 	},
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
 
@@ -75,7 +75,8 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
-			typos_lsp = {},
+			harper_ls = {},
+			clangd = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -84,7 +85,7 @@ return {
 			"ruff",
 			"goimports",
 			"shfmt",
-			"golangci-lint",
+			"revive",
 			"gopls",
 			"yamlls",
 			"basedpyright",
