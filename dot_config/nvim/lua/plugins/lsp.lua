@@ -75,8 +75,6 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
-			harper_ls = {},
-			clangd = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -85,7 +83,7 @@ return {
 			"ruff",
 			"goimports",
 			"shfmt",
-			"revive",
+			"golangci-lint",
 			"gopls",
 			"yamlls",
 			"basedpyright",
