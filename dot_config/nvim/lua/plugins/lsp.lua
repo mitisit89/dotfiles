@@ -75,6 +75,7 @@ return {
 			yamlls = {},
 			dockerls = {},
 			jsonls = {},
+			typos_lsp = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -86,6 +87,7 @@ return {
 			"golangci-lint",
 			"gopls",
 			"yamlls",
+			"cspell",
 			"basedpyright",
 			"dockerls",
 			"jsonls",
