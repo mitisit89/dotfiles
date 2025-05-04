@@ -76,6 +76,7 @@ return {
 			dockerls = {},
 			jsonls = {},
 			typos_lsp = {},
+			rust_analyzer = {},
 		}
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
