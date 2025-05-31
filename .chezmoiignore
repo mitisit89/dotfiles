@@ -1,3 +1,9 @@
 .config/qtile/__pycache__/
 .zcompdump
 .uuid
+{{- if ne .chezmoi.hostname "fedora" }}
+.config/i3/
+.config/picom.conf
+.config/rofi/
+.config/bspwm/
+{{- end }}
